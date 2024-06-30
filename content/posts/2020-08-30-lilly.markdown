@@ -1,0 +1,37 @@
+---
+layout: single
+title:  "Summer Internship at Eli Lilly"
+date:   2020-08-30 08:17:50 -0400
+categories: projects
+permalink: /:categories/lilly
+
+header:
+ teaser: /assets/thumbnails/thumb.lilly.png
+---
+
+This summer, I worked a medical device engineering internship with Eli Lilly at their Cambridge Innovation Center. Virtually, that is.
+
+This was a very positive work experience for me, despite the challenges of virtualization. It also started off in an amusing way.
+
+On the first day, I was scheduled to receive my work laptop in the mail. Instead of the UPS deliveryman ringing my doorbell, or knocking, he decided to carry on with his day and drive right past my house without even attempting to notify me of his presence. Instead a single note was left on the front door, saying "We missed you!" and telling me they'd try again tomorrow.
+
+Now, I had been eagerly awaiting this laptop. I wasn't about to let this UPS driver get away! I called UPS customer service and attempted to get a reroute -- not allowed by company policy. Pfft.
+
+I then remembered: I had map-based tracking on the UPS webpage for my tracking number. Since I hadn't closed the page, it showed where the driver was going - even after passing my house! In fact, he was making deliveries at the Harvard Business School, not too far away from where I lived.
+
+Naturally, I proceeded to jump on my bike, sailing across Allston and arriving at HBS. It helped that this was still relatively early into the never-ending pandemic, so there were very few cars on the streets. I didn't know where he was within HBS, but I figured that there were only so many common exits. I sat and waited in one of them and sure enough, a UPS truck turned a corner and approached me after only a few minutes of waiting. I stood in front of it, gesturing for him to stop.
+
+I got my laptop.
+
+Anyhow, I unfortunately cannot say too much about my work with Eli Lilly. It was quite interesting and definitely helped me to maintain my interest in working in or adjacent to the medical device industry. But I did sign what is effectively an NDA.
+
+I am allowed to share these two slides of content, in addition to a slide's worth of resume bullet points (see my resume for those).
+
+
+![Pump Details](/projects/lilly/large.png)
+
+*Pump for drug delivery device slide*
+
+![Electronic Details](/projects/lilly/elec.png)
+
+*Electronics for drug delivery device slide*

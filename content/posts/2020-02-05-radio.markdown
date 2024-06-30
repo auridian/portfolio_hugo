@@ -1,0 +1,168 @@
+---
+layout: single
+title:  "Early Activities with the MIT Radio Society (before Covid)"
+date:   2020-02-05 08:17:50 -0400
+categories: projects
+permalink: /:categories/radio
+
+header:
+ teaser: /assets/thumbnails/thumb.radio.jpg
+---
+
+*This is article one on my involvement with the Radio Society.*
+
+I joined the MIT Radio Society in the fall of 2019. Given my natural affinity for large infrastructure and high places (like rooftops!), it seemed like a good fit for me. If only I had found out about it earlier than junior year!
+
+In the fall semester + IAP (MIT's January low-stress time) + month and a half of spring semester (before the world ended), I was able to partake in various events and help with improvements to our radio infrastructure as well as acquiring new hardware for our two stations: W1MX, the HF (and -- almost -- 2m EME) station; and W1XM, technically the UHF Repeater Association (but in practice, the two clubs collaborate extensively).
+
+This is the first article in a series that will detail several interesting experiences that I have had with the Radio Society, in roughly chronological order but with significant overlap. The timeframe of this particular article is from September 2019 to early March 2020; in mid-March, the coronavirus pandemic forced all students to physically leave MIT. The next article will detail my involvement in the time period after the Great Kickout (or Techxodus, or whatever you call it).
+
+### It all started with a Ramset
+
+I first entered the Radio Society workshop in MIT's Walker Memorial one evening in early fall 2019 to help put up shelving in one of the most amusing ways possible: a Ramset gun! A Ramset takes .22 blanks and allows you to fire nails into hard walls. With proper PPE for everone involved, it was a rather amusing introduction to the space. The added shelving allowed us to finally move a spare HF Yagi out of the walkway and into a more appropriate storage location.
+
+### W1MX 2m EME array: installation, rotor diagnosis, and cold hands
+
+A month or so after Ramset night, I was informed about an ongoing project wherein a 2-meter (144 MHz) dual-polarization quad Yagi antenna array was being installed on the roof of Walker Memorial, a 3.5-story building.
+
+Though I was not around for the original tower installation on Walker's upper roof, I did get to help with assembly of the elements and individual Yagis.
+
+![Assembling one of the units](/projects/radio/2m_assembly.jpg)
+
+*One of the four Yagis under construction on sawhorses. Yes, those are Harbor Freight sawhorses.*
+
+With the Radio Society, infrastructural projects are not seen merely as work; they are a learning experience and a community bonding activity. Additionally, the need for such infrastructure as we often need to be located high up often results in gaining access to interesting places, largely rooftops. The novelty of the excursions and the views they offer make it easy to convince prospective new members to come along for an afternoon, even as the Boston cold is starting to set in for the year.
+
+After we installed the array elements on the frame, we raised the frame within the stationary pedestal that was mounted to the roof deck. This involved pulleys and several hands helping pull a rope that allowed the mast -- and the frame on top of it -- to rise to proper position. Once raised, it was secured at that height and we were able to move on to warmer parts of the installation process.
+
+![The array, installed](/projects/radio/2m_array.jpg)
+
+*The 2m EME array in all its glory.*
+
+After a few days, we noticed that the elevation rotor had stopped responding. A variety of attempted remedies occurred within the warm enclosure of our station, but there was no choice: we would have to go back into the cold and find out what was wrong. We donned our Exofit fall protection gear, went over safe procedure for going up, and got to it.
+
+We ended up bringing down the elevation rotor in order to diagnose it in the Radio Society shop.
+
+![The array, installed](/projects/radio/2m_rotor.jpg)
+
+*The elevation rotor for 2m. Small, but mighty - when the power contacts are properly soldered, that is.*
+
+We found that the likely problem with it was that one of the power leads had been poorly soldered, and upon rotor actuation, it completely came loose! Thus, no power was being transmitted to the actual rotor brushes. Thankfully, this was an easy fix, and we were able to replace the rotor same-day, before sundown.
+
+Later on, we would wind up doing Heliax runs (think coax cable, but very thick and stiff and meant for high frequency, high power applications). Considering that at this point we had completed a teardown of the MIT Media Lab's old pager system (see below), this meant that we had excess Heliax and even 7/16 DIN connectors to use for this!
+
+The final remaining piece of the 2m EME array installation project was the notch filters: we were waiting on a single filter around 900 MHz that would block out the Prudential Tower's pager system frequency, which was incredibly strong given the Prudential's location opposite Walker over the Charles River. Unfortunately, the pandemic hit and the project is now on indefinite hold until we can return to campus.
+
+### W1XM 6m Beam Restoration: the rare perpendicular polarization and ice cream in January
+
+A severe windstorm in January, right before the VHF contest (more on that further down) led to the 6m Yagi on top of the W1XM shack on the Green Building roof being sheared in half. Half of it was still in normal position, pointed at the horizon; the other half was pointed down at the roof deck. This I have deemed worthy of the term "perpendicular polarization." (yes, I know the elements themselves are still horizontally polarized.)
+
+Thankfully, the guy-wire held and the sheared boom section did not go flying! Nevertheless, it was concerning: we only had a few days until the contest, and we wanted as many bands running as possible!
+
+A crew of five or so of us over the course of a few days took down the antenna and found replacement boom segments in the shack for the parts that were sheared. A quick inspection led us to believe that the fault came from the stress concentration at the significantly overtightened bolts joining two boom sections, combined with high cyclic wind loading over several years.
+
+![View from shack roof and 6m beam](/projects/radio/6m_repairs.jpg)
+
+*The 6m Yagi on the Green Building's upper roof deck, with main boom replaced, but with only some of its directing elements reinstalled. The astute observer might notice that this was a strangely nice day out for mid-January!*
+
+We took the opportunity to clean all of the conducting interfaces between the boom and the driving/directing/reflecting elements of the Yagi, which was oddly pleasant in mid-January as the temperatures hovered around 73 degrees Fahrenheit. Several of us went for ice cream after reinstalling the antenna. This was also the same day that we first saw the Polaroid demolition site (see below).
+
+### IAP Lecture Series: Scaring flatlanders, and a lot of free Domino's
+
+For the past two years, the Radio Society would host various speakers at MIT to talk about various radio-adjacent topics that might be of interest to the MIT community. As the typical school year is too packed and people have negative free time, this always occurs during IAP (Independent Activities Period), the least stressful term in a given MIT academic year. I got to see the inner workings of the lecture series, help with the wordsmithing of introductions for the speakers, and publicize the events to the campus community, as well as help with food procurement and room preparation.
+
+By becoming part of the event support staff, I was also able to meet the speakers and chat with them before and after their talks. We ended up taking one of them, a professor from a geographically flat state out west, up to the 250-ft tall roof of the Green Building to tour our station. Needless to say, this professor was not used to such heights, and rather amusingly clung to the inner railing (many feet away from the edge, which also has its own rail and parapet). Despite many assurances that nobody would be getting blown off the roof, the professor wouldn't budge. I would post an amusing photo of this happening, but out of respect for privacy I will refrain from doing so.
+
+[Check out the lecture series here -- it was quite informative!](http://w1mx.mit.edu/iap/2020/)
+
+### January VHF Contest
+
+I also got to operate my first contest with W1XM in January of 2020. Over the course of a weekend, club members past and present came together, pizza was consumed, and many contacts were made across many bands, as well as a diverse array of states and countries.
+
+Our arsenal of equipment included the 6m beam that I had helped restore, a fixed 2m Yagi pointing west, a movable 2m Yagi, a movable 70cm Yagi, the Large Radome's 6-meter-wide dish on 1297 MHz (terrestrial and moonbounce!), and likely several other smaller antennas that I am not remembering. Unfortunately, the Small Radome's dish was having difficulty receiving (but not transmitting), and our 900 MHz radio was having some difficulty as well.
+
+I started off easy, making FT8 connections over 6m, but soon progressed to voice contacts on 2m, where I had the most fun and spent the most time. It made me learn the phonetic alphabet rather quickly! Unfortunately, I seemed to have gotten a little too excited on 2m: one time I keyed up with the foot pedal, instead of beginning to transmit, I unleashed our power amp's magic blue smoke. A few blown passives should be fixable, but we ended up not getting a chance to repair it before the world ended mid-March.
+
+Late into Saturday night (and early Sunday morning) of the contest, the Moon was visible. Other operators were able to use JT65 on 1297 with the Large Radome to make contacts in places as remote as Texas and Ukraine; but nobody seemed to be listening whenever I was operating. Nevertheless, it was quite interesting to talk to people from all over the eastern US.
+
+### Polaroid Dish: our very own white elephant!
+
+Walking back to campus from a food outing in mid January, some friends and I noticed a demolition site at the old Polaroid building near Central Square in Cambridge. More specifically, we noticed that although the site was trashed and actively being torn down, on top of the yet-to-be-destroyed section there was a massive parabolic dish -- estimation with Google Maps led us to believe it was about 5.5 meters in diameter, only slightly smaller than the dish in the Large Radome.
+
+Being nosy MIT students, we decided to show up a few days later at the demolition site and ask around to see if we could talk to the foreman, or whomever was in charge. We reasoned that if they were going to tear down the building and trash the dish anyway, why not take it down intact and donate it to a student group?
+
+We finally discovered, after talking to enough confused demolition workers, that the MIT Engine was in control of the project, and would be building a new project on the site. We would have to ask them for the dish.
+
+They were initially confused by our request, and brushed us aside; but eventually (after a few weeks) our persistence and demonstrated serious interest in procuring it paid off, and they would even deliver it to us for free!
+
+There was one catch, however: it was going to be delivered at 5am the next Friday (coincidentally Valentine's Day), and we had to be there to receive it. This was only a few days of notice, and no negotiation was possible.
+
+![Why was I awake at this ungodly hour?](/projects/radio/polaroid_delivery.jpg)
+
+*Delivery at 5am to the loading dock of MIT's building N52. A mixture of amusement and regret fills my mind as I relive the...* unique *experience of February 14, 2020.*
+
+Thus, we received it. It arrived more or less on time, and was incredibly unpleasant to move. It came in three sections: the two rounded edges, and the largest piece in the center, which weighed around 300 pounds. The team we brought -- only six people -- managed to move it inside the N52 holding bays where we had intended on storing it for no longer than a month. We wrote "Will be gone by 3/14/20" on a note on the dish components in the holding bay.
+
+Given the timeline of when the great announcement to remove all undergraduates was made, nobody should be surprised that as of November of 2020, that dish is still there. (Update June 2021: still there. We'll move it eventually.)
+
+### Getting Licensed: the Technician with a bovine callsign
+
+ I finally got around to getting my amateur radio license in January of 2020, which was objectively the best month of the year. A cozy few hours here and there on Hamstudy combined with enough of an electronics background and the advice to "always go with the most bureaucratic answer" if I was unsure about a question let me pass the Technician exam by a healthy margin. I only narrowly failed to pass the General despite spending zero time studying for it; but it was no big deal, for the Tech would be sufficient to grant me my own callsign and have UHF repeater privileges. I was ecstatic!
+
+One day later, I got my callsign: KC1MNR. I was happy that I had a name, yet slightly disappointed that fate (or really the random placement of my forms next to all other forms taken in by the FCC that day) had granted me something that sounded like cows chewing (kay-see-one-munur). It turns out that clearly distinguishing "emm-enn-arr" is quite difficult over a poor connection. Thus I was jealous of others who had callsigns that were actually pronounceable.
+
+But no fear: there is a vanity callsign acquisition system! Depending on your license class, you can choose a variety of callsigns starting with K, W, N, or (if Extra) A. Naturally, since A is restricted to Extras, I figured it would have the least crowding and most options that I would desire. So I elected to wait until I passed Extra to get my vanity (which did occur, and I am now AI1XR; see the next article in this series for more on the remote ham exam experience!)
+
+
+### Harvesting the Media Lab Pager
+
+The MIT Media Lab, for whatever reason, had a pager system on the lower (E15, old ML) roof. Eventually after enough prodding on the part of Radio Society members, we got them to let us take whatever we wanted from it. This meant that we got to salvage things from the penthouse machine room -- things like the Heliax and 7/16 DIN that went with the 2m EME array (see above). It also meant getting to go out onto the roof deck of E15. We took down the pager antenna, the grounding wire, and generally tidied up the remains after removing it. There were also some smaller transmitter devices that were no longer in use that we were permitted to appropriate. 
+
+![Pager](/projects/radio/pager.jpg)
+
+*The pager, with MIT's Kendall Square construction in the background. The center (and vertically highest) conductor is ground, so that it can act as a lightning rod. Not that that is likely to be needed considering that everything around this building is significantly taller.*
+
+Dreams of creating a ham pager network across campus (because we can, therefore why not?) were unfortunately dashed by the pandemic. The pager is in storage until we can return to campus.
+
+### Zero to President: the revenge of Milo Cooper
+
+*In the interest of actually finishing writing this article, I will postpone writing about the intra-MIT politics and interactions that led me to run for the W1XM presidency, and get it. There is a lot to say and a lot of context to give, and I would rather save that for another article.*
+
+*Stay tuned for the second article, which will talk about: being a guinea pig for remote ham exams, getting extra'd and doing some test sessions, cleaning out the W1XM station, the W1MX HF beam fiasco, and a hell of a lot of fundraising and strategy meetings to ultimately save the large radome at MIT.*
+
+### Appendix: Photo Gallery
+
+However, I will share some highlights of the rare views that are most easily experienced by doing radio work!
+
+![GB From Walker](/projects/radio/gb_from_walker.jpg)
+
+*The Green Building from the lower roof of Walker Memorial. The Large Radome is clearly visible, as is the Crow's Nest tower on which our UHF repeater is located. This was a nice day, early in fall of 2019.*
+
+![GB Sunset](/projects/radio/gbr_sunset.jpg)
+
+*Sunset from the Green Building roof looking out over the Charles River.*
+
+![Me on radome ladder](/projects/radio/milo_radome.png)
+
+*Yours truly, climbing the ladder to the Large Radome on a very cold winter day. The caged vertical ladder is no longer up to code; renovations (see next article!) will fix that.*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

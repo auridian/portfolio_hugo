@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Milo J. Hooper</title>
+    <link>http://localhost:1313/categories/projects/</link>
+    <description>Recent content in Projects on Milo J. Hooper</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jun 2021 08:17:50 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</title>
+      <link>http://localhost:1313/posts/2021-05-30-cnc/</link>
+      <pubDate>Tue, 01 Jun 2021 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2021-05-30-cnc/</guid>
+      <description>My senior spring (2021) at MIT, I only needed one humanities subject to graduate, which left me ample time to take on classes and projects based purely on interest. One of these was the the MIT Laboratory for Manufacturing and Productivity&amp;rsquo;s new &amp;ldquo;apprenticeship&amp;rdquo; half-class program. We formed teams of 4-6 and were tasked with designing and manufacturing a small CNC 3-axis milling machine. I saw this as a low-stress, high-value way to recover some of my practical machining and DFM skills, as well as to get more comfortable doing CNC machining, after those skills had somewhat atrophied due to the pandemic.</description>
+    </item>
+    <item>
+      <title>Senior Capstone: Ward-Level, High-Flow Oxygen Generation for Low-Resource Environments</title>
+      <link>http://localhost:1313/posts/2020-12-20-oxygen/</link>
+      <pubDate>Sun, 20 Dec 2020 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2020-12-20-oxygen/</guid>
+      <description>My senior capstone unfortunately coincided with the fully virtualized semester of Fall 2020. Nevertheless, I was able to have a meaningful team-based project experience working on an oxygen generation system and distribution concept in MIT&amp;rsquo;s 2.75 capstone, Medical Device Design.&#xA;The course covered many relevant topics to medical device engineering; medical applications frequently require more than the typical mechanical engineer&amp;rsquo;s set of tools &amp;ndash; you often need to incorporate electronic components to enable patients and practitioners alike to use your device.</description>
+    </item>
+    <item>
+      <title>Summer Internship at Eli Lilly</title>
+      <link>http://localhost:1313/posts/2020-08-30-lilly/</link>
+      <pubDate>Sun, 30 Aug 2020 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2020-08-30-lilly/</guid>
+      <description>This summer, I worked a medical device engineering internship with Eli Lilly at their Cambridge Innovation Center. Virtually, that is.&#xA;This was a very positive work experience for me, despite the challenges of virtualization. It also started off in an amusing way.&#xA;On the first day, I was scheduled to receive my work laptop in the mail. Instead of the UPS deliveryman ringing my doorbell, or knocking, he decided to carry on with his day and drive right past my house without even attempting to notify me of his presence.</description>
+    </item>
+    <item>
+      <title>Quick Fix: Repair of a Broken Baofeng CH-5 Charging Base</title>
+      <link>http://localhost:1313/posts/2021-06-30-baofeng/</link>
+      <pubDate>Tue, 30 Jun 2020 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2021-06-30-baofeng/</guid>
+      <description>I don&amp;rsquo;t like giving up on technological objects when they first break; I instinctively try to figure out a way to fix them. This has paid off numerous times: people have thrown away air conditioners that are perfectly functional, save for the fact that they tripped the GFI once; and I have taken thrown-out alarm clocks that couldn&amp;rsquo;t produce alarm sounds, and opened them up to see what was wrong, only to discover that one of the solder joints leading to the speaker had been broken!</description>
+    </item>
+    <item>
+      <title>Perigel</title>
+      <link>http://localhost:1313/posts/2020-05-30-perigel/</link>
+      <pubDate>Sat, 30 May 2020 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2020-05-30-perigel/</guid>
+      <description>In the Spring of 2020 at MIT, I took 2.782, or Design of Medical Devices and Implants.&#xA;Sounds about like what I&amp;rsquo;d be into.&#xA;It was an excellent class that maintained quality through the generally rough transition to online learning due to the Great Kick Out of March 2020 with the rise of the coronavirus.&#xA;For the second half of the term, we had to do a group project; my team ended up designing a novel formulation for a pericardial adhesion barrier, which we named Perigel.</description>
+    </item>
+    <item>
+      <title>Early Activities with the MIT Radio Society (before Covid)</title>
+      <link>http://localhost:1313/posts/2020-02-05-radio/</link>
+      <pubDate>Wed, 05 Feb 2020 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2020-02-05-radio/</guid>
+      <description>This is article one on my involvement with the Radio Society.&#xA;I joined the MIT Radio Society in the fall of 2019. Given my natural affinity for large infrastructure and high places (like rooftops!), it seemed like a good fit for me. If only I had found out about it earlier than junior year!&#xA;In the fall semester + IAP (MIT&amp;rsquo;s January low-stress time) + month and a half of spring semester (before the world ended), I was able to partake in various events and help with improvements to our radio infrastructure as well as acquiring new hardware for our two stations: W1MX, the HF (and &amp;ndash; almost &amp;ndash; 2m EME) station; and W1XM, technically the UHF Repeater Association (but in practice, the two clubs collaborate extensively).</description>
+    </item>
+    <item>
+      <title>Determining the Optimal Ripstik Frequency, Empirically</title>
+      <link>http://localhost:1313/posts/2019-12-20-ripstik/</link>
+      <pubDate>Fri, 20 Dec 2019 08:17:50 -0400</pubDate>
+      <guid>http://localhost:1313/posts/2019-12-20-ripstik/</guid>
+      <description>In my junior fall (2019), I took a class at MIT called 2.671, or Measurement and Instrumentation.&#xA;This class taught me a great many things that will come in handy for future academic reports and any possible research that I may produce. Specifically, I learned a lot about uncertainty, as well as how to use frequency-domain analysis in a practical manner to extract information that I am interested in.&#xA;The class had a series of weekly labs that everyone did, in addition to an overarching individual project that took the entire semester.</description>
+    </item>
+  </channel>
+</rss>

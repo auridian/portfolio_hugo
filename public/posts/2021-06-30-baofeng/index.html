@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Quick fix repair of a broken baofeng ch 5 charging base | Milo J. Hooper</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<meta name="keywords" content="Milo J. Hooper">
+<meta property="og:locale" content='en_US'>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick Fix: Repair of a Broken Baofeng CH-5 Charging Base">
+<meta property="og:description" content="I don&rsquo;t like giving up on technological objects when they first break; I instinctively try to figure out a way to fix them. This has paid off numerous">
+<meta property="og:url" content="http://localhost:1313/posts/2021-06-30-baofeng/">
+<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<link rel="canonical" href="http://localhost:1313/posts/2021-06-30-baofeng/">
+
+<link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='http://localhost:1313/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
+<link rel="manifest" href='http://localhost:1313/site.webmanifest'>
+
+<link rel="stylesheet" href="http://localhost:1313/css/styles.2cebbe23ce27e3a0a9a361f45a949a29edd235c9f5a1e42d09159d62f5ebf9f4dd0064a371947ab8500793c0e4e3eb986fa947425e9270df38a407317205de34.css" integrity="sha512-LOu&#43;I84n46Cpo2H0WpSaKe3SNcn1oeQtCRWdYvXr&#43;fTdAGSjcZR6uFAHk8Dk4&#43;uYb6lHQl6ScN84pAcxcgXeNA==">
+</head>
+
+  <body>
+    <div class="nav-drop">
+  <div class="nav-body">
+    <div class="nav-close"></div><div class="color_mode">
+  <label for="mode">Toggle Dark Mode</label>
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+  </div>
+</div>
+<header class="nav">
+  <nav class="nav-menu">
+    <a href=http://localhost:1313/ class="nav-brand nav_item">
+        Milo J. Hooper</a>
+    <div class="nav_bar-wrap">
+      <div class="nav_bar"></div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      
+  <div class="wrap mt post">
+    <div><p class=post_date>30. June 2020</p>
+      <h1 class="post_title">Quick Fix: Repair of a Broken Baofeng CH-5 Charging Base</h1>
+      <div class="post_body">
+        <div class="post_inner">
+        
+        
+          <p>I don&rsquo;t like giving up on technological objects when they first break; I instinctively try to figure out a way to fix them. This has paid off numerous times: people have thrown away air conditioners that are perfectly functional, save for the fact that they tripped the GFI once; and I have taken thrown-out alarm clocks that couldn&rsquo;t produce alarm sounds, and opened them up to see what was wrong, only to discover that one of the solder joints leading to the speaker had been broken! A quick re-soldering and reassembly later, it was as good as new!</p>
+<p>A similar fate I suspected awaited me with the case of my Baofeng CH-5 charging base. This is the port into which you plug a Baofeng UV-5R handheld transceiver, which operates on both 70 cm and 2 m, as well as being able to listen to common broadfast FM stations.</p>
+<p>After hanging out with the MIT Radio Society for Field Day in June 2021, I discovered that the charging base had become damaged in transit in my backpack. The barrel jack connection was incredibly wobbly, and no power was going to the battery.</p>
+<p>The first thing to do was to separate the base and reveal the PCB beneath, which was a lot more tedious than one might expect; though the bottom of the (all injection-molded, of course) base had a small impression where clearly similar parts used screws to assemble charger bases, this was instead a partial snap fit &ndash; wonderfully simple to assemble, but a bit of a pain to pry apart. Thankfully, I was able to wedge several iFixit flathead bits in the non-snap-fit sections and, after inserting no less than <em>four</em> flathead bits in, I was able to pop out the snap fit &ndash; with minimal destruction, too!</p>
+<p><img src="/projects/baofeng/opening.jpg" alt="Wedging the first flathead in."></p>
+<p><em>Though the picture does not show it well, I could see reasonably well within the hollow CH-5 interior and spot the problem &ndash; a break in the charger&rsquo;s PCB!</em></p>
+<p>The brains of the CH-5 charger are shown below:</p>
+<p><img src="/projects/baofeng/broken.jpg" alt="Broken PCB"></p>
+<p><em>Can you spot the problem?</em></p>
+<p>This is what it should have looked like (well, sort of):</p>
+<p><img src="/projects/baofeng/full.jpg" alt="Together"></p>
+<p><em>Sadly, repairing a PCB isn&rsquo;t as easy as just shoving the broken part back onto the rest of the PCB.</em></p>
+<p>A bit of probing with my trusty Fluke multimeter and I was able to see what was going on. The dark green marks divisions between light green conductive regions (though I&rsquo;d need to scrape up the light green coating to actually reveal the connection). One was clearly ground, and that left the high side for the other one. I presume the two electrically connected attachments for the barrel jack are for the supply ground and the shield, like in a USB connector (which I saw at and had to wrangle with in my time at Eli Lilly). The upper conductor in the above image, which goes to the positive side of the battery and is a stepped down voltage from the supply voltage of 10 V (at a maximum of 0.5 A) from a wall wart.</p>
+<p>I&rsquo;ll also note that the edition of this charger PCB is &ldquo;NEW-5W-VER11&rdquo; with a date of 2018-12-25; I find this mildly amusing given that I technically bought the Baofeng UV-5R MK2, the &ldquo;2020&rdquo; edition. Clearly not much has changed in the charger (not that there is much to change, of course).</p>
+<p>I initially had assumed that there was some op amp or linear regulator action happening in the SOP8 8-pin component to control the stepdown; I had to look closer at what the component was to do a lookup.</p>
+<p><img src="/projects/baofeng/farside.jpg" alt="What&rsquo;s this 8 pin object?"></p>
+<p><em>A closer view of resistors and capacitors and that SOP8.</em></p>
+<p>The marking on that IC is: &ldquo;HXN-WS e4980&rdquo;; I looked that up, and presto &ndash; Aliexpress tells me it&rsquo;s a linear CCCV charge management chip! Well, that&rsquo;s not surprising.</p>
+<p>I also take an approving notice of the bypass capacitors to ground from high side lines near the SOP8.</p>
+<p>The two solder joints on the far left there are the bottom end of the status LED that lights up the charger when power is applied.</p>
+<p><img src="/projects/baofeng/middle.jpg" alt="The middle"></p>
+<p><em>A view of the middle of that board up close as well, with the resistor shown.</em></p>
+<p>In order to complete the repair of the charger, I used an Exacto knife to painstakingly yet carefully scrape up some of the light green on the hot side of the 10 V trace in order to solder a connection; the ground side did not need such a connection, as there was a handy solder blob on the unbroken side that I could simply attach a jumper to. A little hot glue later, and it was ready to be put back together!</p>
+<p><img src="/projects/baofeng/hotglued.jpg" alt="Hot glue job"></p>
+<p><em>I cleaned it up a little more after this shot was taken, but forgot to take another picture before reassembling. Not the prettiest interior, but better than ending up in the scrapyard.</em></p>
+<p>I redid the snap fit and sure enough, the barrel jack once again snugly fit into the charger base!</p>
+<p><img src="/projects/baofeng/baofeng.jpg" alt="Fixed Charger"></p>
+<p><em>Just like new!</em></p>
+
+        </div>
+        <div class="post_extra mb-2">
+          
+<div class="copy" data-before="Share Story" data-after="Link Copied">
+  <svg class="icon">
+    <use xlink:href="#copy"></use>
+  </svg>
+</div>
+        </div>
+        <div>
+        
+        </div>
+      </div>
+    </div>
+    <a href=http://localhost:1313/ class="post_nav"><span class="post_next">Latest Posts
+      <svg class="icon icon_scale">
+        <use xlink:href="#double-arrow"></use>
+      </svg>
+    </span></a>
+  </div>
+
+    </main>
+    <footer class="footer wrap pale">
+  <p>&copy;&nbsp;<span class="year"></span>&nbsp;Milo J. Hooper</p>
+  <p class="attribution upcase">Designed by  <a href = '<no value>' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'><no value></a></p>
+</footer>
+
+
+<script src="http://localhost:1313/js/index.min.0c8b9f3d37bbc2061bb8f9bfac9713652c85a41501d73b2b5def4579e67a40a46526acbbb34cd6028725be74381d9c780229983b1d464d85ff85b378f64ebe4d.js"></script>
+
+    <svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 699.428 699.428" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19L502.714 0zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612v306zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857h-65.572zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835 0 12.065 9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"></path>
+  </symbol>
+  <symbol viewBox="0 0 53 42" xmlns="http://www.w3.org/2000/svg" id="double-arrow">
+    <path d="M.595 39.653a1.318 1.318 0 0 1 0-1.864L16.55 21.833a1.318 1.318 0 0 0 0-1.863L.595 4.014a1.318 1.318 0 0 1 0-1.863L2.125.62a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0zm29 0a1.318 1.318 0 0 1 0-1.864L45.55 21.833a1.318 1.318 0 0 0 0-1.863L29.595 4.014a1.318 1.318 0 0 1 0-1.863l1.53-1.53a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0z"></path>
+  </symbol>
+</svg>
+  </body>
+</html>

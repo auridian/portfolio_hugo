@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Building a cnc mini mill with the laboratory for manufacturing and productivity during covid | Milo J. Hooper</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<meta name="keywords" content="Milo J. Hooper">
+<meta property="og:locale" content='en_US'>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid">
+<meta property="og:description" content="My senior spring (2021) at MIT, I only needed one humanities subject to graduate, which left me ample time to take on classes and projects based purely on">
+<meta property="og:url" content="http://localhost:1313/posts/2021-05-30-cnc/">
+<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<link rel="canonical" href="http://localhost:1313/posts/2021-05-30-cnc/">
+
+<link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='http://localhost:1313/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
+<link rel="manifest" href='http://localhost:1313/site.webmanifest'>
+
+<link rel="stylesheet" href="http://localhost:1313/css/styles.2cebbe23ce27e3a0a9a361f45a949a29edd235c9f5a1e42d09159d62f5ebf9f4dd0064a371947ab8500793c0e4e3eb986fa947425e9270df38a407317205de34.css" integrity="sha512-LOu&#43;I84n46Cpo2H0WpSaKe3SNcn1oeQtCRWdYvXr&#43;fTdAGSjcZR6uFAHk8Dk4&#43;uYb6lHQl6ScN84pAcxcgXeNA==">
+</head>
+
+  <body>
+    <div class="nav-drop">
+  <div class="nav-body">
+    <div class="nav-close"></div><div class="color_mode">
+  <label for="mode">Toggle Dark Mode</label>
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+  </div>
+</div>
+<header class="nav">
+  <nav class="nav-menu">
+    <a href=http://localhost:1313/ class="nav-brand nav_item">
+        Milo J. Hooper</a>
+    <div class="nav_bar-wrap">
+      <div class="nav_bar"></div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      
+  <div class="wrap mt post">
+    <div><p class=post_date>01. June 2021</p>
+      <h1 class="post_title">Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</h1>
+      <div class="post_body">
+        <div class="post_inner">
+        
+        
+          <p>My senior spring (2021) at MIT, I only needed one humanities subject to graduate, which left me ample time to take on classes and projects based purely on interest. One of these was the the MIT <a href="https://lmp.mit.edu">Laboratory for Manufacturing and Productivity&rsquo;s</a> new &ldquo;apprenticeship&rdquo; half-class program. We formed teams of 4-6 and were tasked with designing and manufacturing a small CNC 3-axis milling machine. I saw this as a low-stress, high-value way to recover some of my practical machining and DFM skills, as well as to get more comfortable doing CNC machining, after those skills had somewhat atrophied due to the pandemic.</p>
+<p><em>Note to reader: though we performed (in Excel spreadsheets, mostly) calculations and considerations of cutting forces, material removal rates, expected force requirements to meet acceleration requirements, and so on, the primary intention of this project was to develop our practical manufacturing and DFM skills, and to re-familiarize ourselves with the machine shop environment after many months of Covid restrictions. The mini mill served as a useful pedagogical tool for this purpose.</em></p>
+<p>For many images of the project and its development, feel free to check out the Google Sites website we used as a project blog, <a href="https://sites.google.com/view/2s982/weekly-deliverables">here</a>.
+In the interest of reduced redundancy, this article will cover various other elements of my experience in this project and the skills learned, which were less of the focus of the Google Sites blog.</p>
+<p>After considering various possible 3-axis configurations (horizontal mill, vertical bridge mill, or vertical turret mill), we decided to go with the conventional vertical turret style mill, as it was the most familiar topology to the team and reduced the complexity of z-axis design by only allowing the actual head stock to move on one axis, rather than two. Though the bridge mill had the advantages of being a closed structural loop in addition to being <em>interesting</em>, we decided against it due to that complexity, as well as the larger x-axis size requirements &ndash; we wanted something that could reasonably fit on a laboratory benchtop, with approximately one cubic foot of working area.</p>
+<p>Covid restrictions at MIT led to drastically reduced available lab time, as capacity limits meant we could frequently not meet during other classes&rsquo; lab times.
+We somewhat successfully mitigated the effects of this situation by collaborating over Zoom and preparing our CAD and CAM ahead of time, though frequently we would need to get second opinions and do revisions of those elements anyway in lab.
+Though we generally preferred Solidworks, I will admit that Autodesk Fusion 360 did make remote collaboration substantially easier, even if I still gripe about how it handles assemblies&hellip;</p>
+<p><img src="/projects/cnc/helix_cam.png" alt="Helical descent cam for one of the xy end mounts"></p>
+<p><em>Fusion also had an excellent CAM system that enabled substantial control over feeds, speeds, lead in/out rates, etc. with many specialized (e.g. tapping) and generic (e.g. pocket) operations.</em></p>
+<p>I got to experience the overarching design process, as well as implementing it in the actual CAD of components, and determining the order of machining operations in CAM within the constraints of what tooling and stock was available in lab. We made heavy use of pockets and helical descent patterns, as well as tabs so our parts would remain affixed to the stock sheet. A few minutes of post processing on the band saw and sander would finish the job for many of the flatter pieces.</p>
+<p>NEMA-23 stepper motors drove ball screws on the xy stage. The ball screws were chosen for their reduced friction relative to a lead screw (and thus lower power requirements). However, they need more design work to function in vertical applications (like the z-axis) &ndash; they&rsquo;d need a separate braking system to prevent the z-axis from crashing down when not powered. We decided to keep it simple and stick with a lead screw for the z-axis. A Raspberry Pi-driven LinuxCNC controller offloaded the computer-related components of the CNC; we focused on the mechanical design and manufacturing.</p>
+<p><img src="/projects/cnc/large_plate.jpg" alt="Big ugly plate"></p>
+<p><em>The main horizontal-plane plate that would mount to the overall frame and hold the xy stage and axes above it. This photo was taken after holes had been drilled and tapped, but before leveling had been finished. This piece did not fit in either Haas in LMP, so I had to use the Prototrak to have sufficient range of motion to complete the part.</em></p>
+<p>I primarily used large, enclosed Haas 3-axis CNC machines. One was older and had an ancient setup screen and controls, and you had to manually zero each tool and find stock edges; the newer one, however, had an automatic tool offset measurement function <em>and</em> an edge probe! I quickly got comfortable with both systems, though I may have broken a tap or two while trying power tapping&hellip; (fun fact: apparently at least these CNC machines will un-override your speed and feed overrides and force the exact rates and speeds that were put in the CAM when doing tap operations, which makes a lot of sense &ndash; you need a certain relationship between the two or your threads won&rsquo;t be as designed &ndash; but it still shocked me when it sped up from my conservative feed override to normal. Thankfully, taps aren&rsquo;t too expensive&hellip;).</p>
+<p><img src="/projects/cnc/wcs.jpg" alt="Eighties-themed WCS setup utility"></p>
+<p><em>The setup utility for the older Haas, which looks straight out of the 1980s. A series of offset calculations had to be done to ensure that a) your part zeros were properly defined, and b) that your tool zeros were correctly accounted for (I would touch the tools off a red LED sight that would turn on at the smallest perturbation, just indicating contact &ndash; go back a thousandth of a step until the light turns back off, and you are as close as you can reasonably be to exactly 2 inches above the desired zero). Of course, we we also learned other tricks, such as doing tool offsets based off things that don&rsquo;t change nearly as much (such as the vice, rather than a part).</em></p>
+<p>The presence of substantial coolant also made it somewhat annoying to verify that your CAM was being properly executed as intended, though usage of single block operations and toggling coolant intermittently helped.</p>
+<p><img src="/projects/cnc/wet_haas.jpg" alt="What part even was this? I don&rsquo;t know."></p>
+<p><em>The newer Haas blasting some component of the CNC mini mill with infinite coolant. The tool offset touch-off base is in the upper right corner of the working area, behind the workpiece. Yes, I know I should have taken out the handle before starting the run.</em></p>
+<p>I wish I had taken more photos from this project; since we were limited to only a few hours a week in lab by MIT policies, we were focused on getting as much done as possible, and only had a spattering of photos from each week to track progress.</p>
+<p>Nevertheless, there was substantial progress made despite a late start to lab access and covid restrictions: by the end of the proper semester, two axes were fully assembled and functional. As restrictions eased up at the end of semester / beginning of summer, the final assembly was put together.</p>
+<p><img src="/projects/cnc/cnc_assembled.jpg" alt="Final assembly"></p>
+<p><em>The final assembly, as of early June 2021. Photo credit to my friend and teammate, Dani G.</em></p>
+
+        </div>
+        <div class="post_extra mb-2">
+          
+<div class="copy" data-before="Share Story" data-after="Link Copied">
+  <svg class="icon">
+    <use xlink:href="#copy"></use>
+  </svg>
+</div>
+        </div>
+        <div>
+        
+        </div>
+      </div>
+    </div>
+    <a href=http://localhost:1313/ class="post_nav"><span class="post_next">Latest Posts
+      <svg class="icon icon_scale">
+        <use xlink:href="#double-arrow"></use>
+      </svg>
+    </span></a>
+  </div>
+
+    </main>
+    <footer class="footer wrap pale">
+  <p>&copy;&nbsp;<span class="year"></span>&nbsp;Milo J. Hooper</p>
+  <p class="attribution upcase">Designed by  <a href = '<no value>' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'><no value></a></p>
+</footer>
+
+
+<script src="http://localhost:1313/js/index.min.0c8b9f3d37bbc2061bb8f9bfac9713652c85a41501d73b2b5def4579e67a40a46526acbbb34cd6028725be74381d9c780229983b1d464d85ff85b378f64ebe4d.js"></script>
+
+    <svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 699.428 699.428" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19L502.714 0zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612v306zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857h-65.572zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835 0 12.065 9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"></path>
+  </symbol>
+  <symbol viewBox="0 0 53 42" xmlns="http://www.w3.org/2000/svg" id="double-arrow">
+    <path d="M.595 39.653a1.318 1.318 0 0 1 0-1.864L16.55 21.833a1.318 1.318 0 0 0 0-1.863L.595 4.014a1.318 1.318 0 0 1 0-1.863L2.125.62a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0zm29 0a1.318 1.318 0 0 1 0-1.864L45.55 21.833a1.318 1.318 0 0 0 0-1.863L29.595 4.014a1.318 1.318 0 0 1 0-1.863l1.53-1.53a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0z"></path>
+  </symbol>
+</svg>
+  </body>
+</html>
