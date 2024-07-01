@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+  
+  
 <meta name="keywords" content="Milo J. Hooper">
 <meta property="og:locale" content='en_US'>
 <meta property="og:type" content="article">
@@ -14,7 +16,7 @@
 <meta property="og:description" content="In the fall of my junior year at MIT (2019), I took 2.74, or Bio-Inspired Robotics. It was a very interesting course.
 It taught me about impedance control,">
 <meta property="og:url" content="http://localhost:1313/posts/2019-12-19-jumpingleg/">
-<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<meta property="og:image" content="http://localhost:1313/images/thumbnails/thumb.glamourshot.png">
 <link rel="canonical" href="http://localhost:1313/posts/2019-12-19-jumpingleg/">
 
 <link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
@@ -54,6 +56,8 @@ It taught me about impedance control,">
         <div class="post_inner">
         
         
+          <img src="http://localhost:1313/images/thumbnails/thumb.glamourshot.png" alt="/thumbnails/thumb.glamourshot.png" class="post_thumbnail">
+        
           <p>In the fall of my junior year at MIT (2019), I took 2.74, or Bio-Inspired Robotics. It was a very interesting course.</p>
 <p>It taught me about impedance control, about how to practically mimic spring-mass-damper like behavior out of, say, a two-motor driven appendage. You could create, depending on what use case you wanted, behavior to mimic those k-m-b values, using this impedance control.</p>
 <p>We also learned a lot about the various ways you could mimic legs, how different gaits work in two versus four legged animals, and how one might go about recreating that type of behavior in a legged robot.</p>
@@ -69,7 +73,12 @@ It taught me about impedance control,">
 <p>The boom additionally constrained the leg roughly to the vertical axis; we didn&rsquo;t really care about how <em>far</em> it could jump (we originally were interested in that question as well as height, but decided to reduce our scope when we realized how difficult it would be to get one axis working for testing).</p>
 <p>To test the distribution of torque contributed by different muscles in the legs, we implemented that in the K64F FRDM boards (think fancy Arduinos with Arm processors that you can program through mbed). The amount of current allowed into each motor allowed an approximation of the amount of power contributed by each leg muscle.</p>
 <p>The controller we used to drive this system was a hybrid position-torque controller; the position control came first to &ldquo;crouch&rdquo; the leg, and the torque controller generated an optimal torque trajectory for each muscle group over the course of the jump.</p>
-<!-- raw HTML omitted -->
+<video width="600" height="1200" controls>
+  <source src="/jumpingleg/jump.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 <p><em>An amusing video of our robot learning to jump.</em></p>
 <p>After much tweaking of parameters and frustration with various electromechanical issues, we finally began to produce consistent jumps, and were able to take data to see if there was a trend &ndash; and there was!</p>
 <p><img src="/jumpingleg/parabolic.png" alt="Data"></p>

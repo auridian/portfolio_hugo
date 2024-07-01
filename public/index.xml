@@ -6,8 +6,15 @@
     <description>Recent content on Milo J. Hooper</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 08:17:50 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>I am a mechanical engineering graduate of MIT (class of 2021). My focus was on electromechanical systems applied to the biological domain.&#xA;Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so. This often takes the form of medical devices, but I am not confined to working in that domain; anything that serves this purpose is fair game.</description>
+    </item>
     <item>
       <title>Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</title>
       <link>http://localhost:1313/posts/2021-05-30-cnc/</link>
@@ -63,13 +70,6 @@
       <pubDate>Thu, 19 Dec 2019 08:17:50 -0400</pubDate>
       <guid>http://localhost:1313/posts/2019-12-19-jumpingleg/</guid>
       <description>In the fall of my junior year at MIT (2019), I took 2.74, or Bio-Inspired Robotics. It was a very interesting course.&#xA;It taught me about impedance control, about how to practically mimic spring-mass-damper like behavior out of, say, a two-motor driven appendage. You could create, depending on what use case you wanted, behavior to mimic those k-m-b values, using this impedance control.&#xA;We also learned a lot about the various ways you could mimic legs, how different gaits work in two versus four legged animals, and how one might go about recreating that type of behavior in a legged robot.</description>
-    </item>
-    <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>I am a mechanical engineering graduate of MIT (class of 2021). My focus was on electromechanical systems applied to the biological domain.&#xA;Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so. This often takes the form of medical devices, but I am not confined to working in that domain; anything that serves this purpose is fair game.</description>
     </item>
   </channel>
 </rss>

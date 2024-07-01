@@ -2,6 +2,7 @@
 layout: single
 title: About Me
 permalink: /about/
+date: 2024-06-30
 ---
 
 I am a mechanical engineering graduate of MIT (class of 2021). My focus was on electromechanical systems applied to the biological domain.

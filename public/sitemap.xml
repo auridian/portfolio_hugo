@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-06-30T10:23:47-04:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2024-06-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/2021-05-30-cnc/</loc>
     <lastmod>2021-06-01T08:17:50-04:00</lastmod>
   </url><url>
@@ -37,8 +40,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/2019-12-19-jumpingleg/</loc>
     <lastmod>2019-12-19T08:17:50-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

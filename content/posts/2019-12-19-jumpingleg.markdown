@@ -4,7 +4,7 @@ title:  "Robotic Leg Jumping Experiment"
 date:   2019-12-19 08:17:50 -0400
 
 header:
- teaser: /static/thumbnails/thumb.glamourshot.png
+image: /thumbnails/thumb.glamourshot.png
 ---
 
 
@@ -40,9 +40,7 @@ To test the distribution of torque contributed by different muscles in the legs,
 
 The controller we used to drive this system was a hybrid position-torque controller; the position control came first to "crouch" the leg, and the torque controller generated an optimal torque trajectory for each muscle group over the course of the jump.
 
-<video style="margin-left:auto;margin-right:auto;display:block;" controls="" width="600" height="1200">
-    <source src="/jumpingleg/jump.mp4" type="video/mp4">
-</video>
+{{< videolocal src="/jumpingleg/jump.mp4" type="mp4" width="600" height="1200" >}}
 
 *An amusing video of our robot learning to jump.*
 
