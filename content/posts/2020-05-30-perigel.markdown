@@ -6,7 +6,7 @@ categories: projects
 permalink: /:categories/perigel
 
 header:
- teaser: /assets/thumbnails/thumb.perigel.jpg
+image: /thumbnails/thumb.perigel.jpg
 ---
 
 In the Spring of 2020 at MIT, I took 2.782, or *Design of Medical Devices and Implants.*

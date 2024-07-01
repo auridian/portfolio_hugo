@@ -6,7 +6,8 @@ categories: projects
 permalink: /:categories/ripstik
 
 header:
- teaser: /assets/thumbnails/thumb.ripstik.png
+
+image: /thumbnails/thumb.ripstik.png
 ---
 
 
@@ -18,7 +19,7 @@ The class had a series of weekly labs that everyone did, in addition to an overa
 
 Given my natural inclination towards somewhat strange experiments and setups, I naturally chose a proper dynamic system to investigate: the Ripstik.
 
-![My Ripstik Air Pro](/projects/ripstik/ripstik.png)
+![My Ripstik Air Pro](/ripstik/ripstik.png)
 
 *The Ripstik Air Pro in all its glory.*
 
@@ -38,7 +39,7 @@ That tells us there's got to be a maximum somewhere in there; Rolle's theorem re
 
 So for my Measurement and Instrumentation project, I set off to find the optimal Ripstik drive frequency.
 
-![Data Acquisition Apparatus](/projects/ripstik/apparatus.jpg)
+![Data Acquisition Apparatus](/ripstik/apparatus.jpg)
 
 *When I said I wanted to be a cyborg when I grew up, this isn't exactly what I had in mind...*
 
@@ -49,12 +50,12 @@ The Ripstik I used was a Ripstik Air Pro, which is objectively a lot more fun an
 I also had all those sensors hooked into a series of LabQuest / Lab Pro / whatever other kind of Vernier sensor-reading hardware needed, hooked into my laptop, while I did speed trials up and down our carpeted hallway at various drive frequencies. I was carrying the laptop the whole time. I only crashed once or twice; nobody was hurt, but the cord to one of the accelerometers did end up getting cut once. Not a huge loss.
 
 
-![Curve Fit](/projects/ripstik/parabolic.png)
+![Curve Fit](/ripstik/parabolic.png)
 
 *Graphs of data with error bars and curve fit showing maximum velocity and corresponding frequency. 95% confidence intervals given for data points and curve fit parameters.*
 
 Anyhow, I did produce some results -- I found a vaguely parabolic curve with a local maximum of 3.7 ± 0.2 Hz producing a speed of 3.3 ± 1 m/s. The error bars are reasonably large, but definitely point to a specific region of around 3-4 Hz being the optimal drive region -- which is slightly lower than (at least for me) the maximum comfortable drive frequency of 4.2 Hz.
 
-There's a lot more that went into the project that I won't elaborate ad nauseum about here -- read the final report [Here](/projects/ripstik/ripstik.pdf) if you're interested in that!
+There's a lot more that went into the project that I won't elaborate ad nauseum about here -- read the final report [Here](/ripstik/ripstik.pdf) if you're interested in that!
 
 

@@ -6,7 +6,7 @@ categories: projects
 permalink: /:categories/radio
 
 header:
- teaser: /assets/thumbnails/thumb.radio.jpg
+image: /thumbnails/thumb.radio.jpg
 ---
 
 *This is article one on my involvement with the Radio Society.*
@@ -27,7 +27,7 @@ A month or so after Ramset night, I was informed about an ongoing project wherei
 
 Though I was not around for the original tower installation on Walker's upper roof, I did get to help with assembly of the elements and individual Yagis.
 
-![Assembling one of the units](/projects/radio/2m_assembly.jpg)
+![Assembling one of the units](/radio/2m_assembly.jpg)
 
 *One of the four Yagis under construction on sawhorses. Yes, those are Harbor Freight sawhorses.*
 
@@ -35,7 +35,7 @@ With the Radio Society, infrastructural projects are not seen merely as work; th
 
 After we installed the array elements on the frame, we raised the frame within the stationary pedestal that was mounted to the roof deck. This involved pulleys and several hands helping pull a rope that allowed the mast -- and the frame on top of it -- to rise to proper position. Once raised, it was secured at that height and we were able to move on to warmer parts of the installation process.
 
-![The array, installed](/projects/radio/2m_array.jpg)
+![The array, installed](/radio/2m_array.jpg)
 
 *The 2m EME array in all its glory.*
 
@@ -43,7 +43,7 @@ After a few days, we noticed that the elevation rotor had stopped responding. A 
 
 We ended up bringing down the elevation rotor in order to diagnose it in the Radio Society shop.
 
-![The array, installed](/projects/radio/2m_rotor.jpg)
+![The array, installed](/radio/2m_rotor.jpg)
 
 *The elevation rotor for 2m. Small, but mighty - when the power contacts are properly soldered, that is.*
 
@@ -61,7 +61,7 @@ Thankfully, the guy-wire held and the sheared boom section did not go flying! Ne
 
 A crew of five or so of us over the course of a few days took down the antenna and found replacement boom segments in the shack for the parts that were sheared. A quick inspection led us to believe that the fault came from the stress concentration at the significantly overtightened bolts joining two boom sections, combined with high cyclic wind loading over several years.
 
-![View from shack roof and 6m beam](/projects/radio/6m_repairs.jpg)
+![View from shack roof and 6m beam](/radio/6m_repairs.jpg)
 
 *The 6m Yagi on the Green Building's upper roof deck, with main boom replaced, but with only some of its directing elements reinstalled. The astute observer might notice that this was a strangely nice day out for mid-January!*
 
@@ -97,7 +97,7 @@ They were initially confused by our request, and brushed us aside; but eventuall
 
 There was one catch, however: it was going to be delivered at 5am the next Friday (coincidentally Valentine's Day), and we had to be there to receive it. This was only a few days of notice, and no negotiation was possible.
 
-![Why was I awake at this ungodly hour?](/projects/radio/polaroid_delivery.jpg)
+![Why was I awake at this ungodly hour?](/radio/polaroid_delivery.jpg)
 
 *Delivery at 5am to the loading dock of MIT's building N52. A mixture of amusement and regret fills my mind as I relive the...* unique *experience of February 14, 2020.*
 
@@ -118,7 +118,7 @@ But no fear: there is a vanity callsign acquisition system! Depending on your li
 
 The MIT Media Lab, for whatever reason, had a pager system on the lower (E15, old ML) roof. Eventually after enough prodding on the part of Radio Society members, we got them to let us take whatever we wanted from it. This meant that we got to salvage things from the penthouse machine room -- things like the Heliax and 7/16 DIN that went with the 2m EME array (see above). It also meant getting to go out onto the roof deck of E15. We took down the pager antenna, the grounding wire, and generally tidied up the remains after removing it. There were also some smaller transmitter devices that were no longer in use that we were permitted to appropriate. 
 
-![Pager](/projects/radio/pager.jpg)
+![Pager](/radio/pager.jpg)
 
 *The pager, with MIT's Kendall Square construction in the background. The center (and vertically highest) conductor is ground, so that it can act as a lightning rod. Not that that is likely to be needed considering that everything around this building is significantly taller.*
 
@@ -134,15 +134,15 @@ Dreams of creating a ham pager network across campus (because we can, therefore 
 
 However, I will share some highlights of the rare views that are most easily experienced by doing radio work!
 
-![GB From Walker](/projects/radio/gb_from_walker.jpg)
+![GB From Walker](/radio/gb_from_walker.jpg)
 
 *The Green Building from the lower roof of Walker Memorial. The Large Radome is clearly visible, as is the Crow's Nest tower on which our UHF repeater is located. This was a nice day, early in fall of 2019.*
 
-![GB Sunset](/projects/radio/gbr_sunset.jpg)
+![GB Sunset](/radio/gbr_sunset.jpg)
 
 *Sunset from the Green Building roof looking out over the Charles River.*
 
-![Me on radome ladder](/projects/radio/milo_radome.png)
+![Me on radome ladder](/radio/milo_radome.png)
 
 *Yours truly, climbing the ladder to the Large Radome on a very cold winter day. The caged vertical ladder is no longer up to code; renovations (see next article!) will fix that.*
 

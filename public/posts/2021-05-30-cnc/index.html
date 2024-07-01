@@ -7,13 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+  
+  
 <meta name="keywords" content="Milo J. Hooper">
 <meta property="og:locale" content='en_US'>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid">
 <meta property="og:description" content="My senior spring (2021) at MIT, I only needed one humanities subject to graduate, which left me ample time to take on classes and projects based purely on">
 <meta property="og:url" content="http://localhost:1313/posts/2021-05-30-cnc/">
-<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<meta property="og:image" content="http://localhost:1313/images/thumbnails/thumb.cnc.jpg">
 <link rel="canonical" href="http://localhost:1313/posts/2021-05-30-cnc/">
 
 <link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
@@ -21,12 +23,17 @@
 <link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
 <link rel="manifest" href='http://localhost:1313/site.webmanifest'>
 
-<link rel="stylesheet" href="http://localhost:1313/css/styles.2cebbe23ce27e3a0a9a361f45a949a29edd235c9f5a1e42d09159d62f5ebf9f4dd0064a371947ab8500793c0e4e3eb986fa947425e9270df38a407317205de34.css" integrity="sha512-LOu&#43;I84n46Cpo2H0WpSaKe3SNcn1oeQtCRWdYvXr&#43;fTdAGSjcZR6uFAHk8Dk4&#43;uYb6lHQl6ScN84pAcxcgXeNA==">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.f7bfcc428f5e330784792085265e8f5529541ebfddc7212584105eb09ff92eafc32634ecf44af37b043cf04838a47ef87e2fbd89622a1b7ea5d8640c03615e61.css" integrity="sha512-97/MQo9eMweEeSCFJl6PVSlUHr/dxyElhBBesJ/5Lq/DJjTs9ErzewQ88Eg4pH74fi&#43;9iWIqG36l2GQMA2FeYQ==">
 </head>
 
   <body>
     <div class="nav-drop">
   <div class="nav-body">
+    <ul>
+	    <li><a href="/assets/MiloHooperResume.pdf">Resume</a></li>
+	    <li><a href="https://defusion.substack.com" target="_blank">Blog</a></li>
+	    <li><a href="/about">About</a></li>
+    </ul>
     <div class="nav-close"></div><div class="color_mode">
   <label for="mode">Toggle Dark Mode</label>
   <input type="checkbox" class="color_choice" id="mode">
@@ -51,8 +58,6 @@
       <h1 class="post_title">Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</h1>
       <div class="post_body">
         <div class="post_inner">
-        
-        
           <p>My senior spring (2021) at MIT, I only needed one humanities subject to graduate, which left me ample time to take on classes and projects based purely on interest. One of these was the the MIT <a href="https://lmp.mit.edu">Laboratory for Manufacturing and Productivity&rsquo;s</a> new &ldquo;apprenticeship&rdquo; half-class program. We formed teams of 4-6 and were tasked with designing and manufacturing a small CNC 3-axis milling machine. I saw this as a low-stress, high-value way to recover some of my practical machining and DFM skills, as well as to get more comfortable doing CNC machining, after those skills had somewhat atrophied due to the pandemic.</p>
 <p><em>Note to reader: though we performed (in Excel spreadsheets, mostly) calculations and considerations of cutting forces, material removal rates, expected force requirements to meet acceleration requirements, and so on, the primary intention of this project was to develop our practical manufacturing and DFM skills, and to re-familiarize ourselves with the machine shop environment after many months of Covid restrictions. The mini mill served as a useful pedagogical tool for this purpose.</em></p>
 <p>For many images of the project and its development, feel free to check out the Google Sites website we used as a project blog, <a href="https://sites.google.com/view/2s982/weekly-deliverables">here</a>.
@@ -61,21 +66,21 @@ In the interest of reduced redundancy, this article will cover various other ele
 <p>Covid restrictions at MIT led to drastically reduced available lab time, as capacity limits meant we could frequently not meet during other classes&rsquo; lab times.
 We somewhat successfully mitigated the effects of this situation by collaborating over Zoom and preparing our CAD and CAM ahead of time, though frequently we would need to get second opinions and do revisions of those elements anyway in lab.
 Though we generally preferred Solidworks, I will admit that Autodesk Fusion 360 did make remote collaboration substantially easier, even if I still gripe about how it handles assemblies&hellip;</p>
-<p><img src="/projects/cnc/helix_cam.png" alt="Helical descent cam for one of the xy end mounts"></p>
+<p><img src="/cnc/helix_cam.png" alt="Helical descent cam for one of the xy end mounts"></p>
 <p><em>Fusion also had an excellent CAM system that enabled substantial control over feeds, speeds, lead in/out rates, etc. with many specialized (e.g. tapping) and generic (e.g. pocket) operations.</em></p>
 <p>I got to experience the overarching design process, as well as implementing it in the actual CAD of components, and determining the order of machining operations in CAM within the constraints of what tooling and stock was available in lab. We made heavy use of pockets and helical descent patterns, as well as tabs so our parts would remain affixed to the stock sheet. A few minutes of post processing on the band saw and sander would finish the job for many of the flatter pieces.</p>
 <p>NEMA-23 stepper motors drove ball screws on the xy stage. The ball screws were chosen for their reduced friction relative to a lead screw (and thus lower power requirements). However, they need more design work to function in vertical applications (like the z-axis) &ndash; they&rsquo;d need a separate braking system to prevent the z-axis from crashing down when not powered. We decided to keep it simple and stick with a lead screw for the z-axis. A Raspberry Pi-driven LinuxCNC controller offloaded the computer-related components of the CNC; we focused on the mechanical design and manufacturing.</p>
-<p><img src="/projects/cnc/large_plate.jpg" alt="Big ugly plate"></p>
+<p><img src="/cnc/large_plate.jpg" alt="Big ugly plate"></p>
 <p><em>The main horizontal-plane plate that would mount to the overall frame and hold the xy stage and axes above it. This photo was taken after holes had been drilled and tapped, but before leveling had been finished. This piece did not fit in either Haas in LMP, so I had to use the Prototrak to have sufficient range of motion to complete the part.</em></p>
 <p>I primarily used large, enclosed Haas 3-axis CNC machines. One was older and had an ancient setup screen and controls, and you had to manually zero each tool and find stock edges; the newer one, however, had an automatic tool offset measurement function <em>and</em> an edge probe! I quickly got comfortable with both systems, though I may have broken a tap or two while trying power tapping&hellip; (fun fact: apparently at least these CNC machines will un-override your speed and feed overrides and force the exact rates and speeds that were put in the CAM when doing tap operations, which makes a lot of sense &ndash; you need a certain relationship between the two or your threads won&rsquo;t be as designed &ndash; but it still shocked me when it sped up from my conservative feed override to normal. Thankfully, taps aren&rsquo;t too expensive&hellip;).</p>
-<p><img src="/projects/cnc/wcs.jpg" alt="Eighties-themed WCS setup utility"></p>
+<p><img src="/cnc/wcs.jpg" alt="Eighties-themed WCS setup utility"></p>
 <p><em>The setup utility for the older Haas, which looks straight out of the 1980s. A series of offset calculations had to be done to ensure that a) your part zeros were properly defined, and b) that your tool zeros were correctly accounted for (I would touch the tools off a red LED sight that would turn on at the smallest perturbation, just indicating contact &ndash; go back a thousandth of a step until the light turns back off, and you are as close as you can reasonably be to exactly 2 inches above the desired zero). Of course, we we also learned other tricks, such as doing tool offsets based off things that don&rsquo;t change nearly as much (such as the vice, rather than a part).</em></p>
 <p>The presence of substantial coolant also made it somewhat annoying to verify that your CAM was being properly executed as intended, though usage of single block operations and toggling coolant intermittently helped.</p>
-<p><img src="/projects/cnc/wet_haas.jpg" alt="What part even was this? I don&rsquo;t know."></p>
+<p><img src="/cnc/wet_haas.jpg" alt="What part even was this? I don&rsquo;t know."></p>
 <p><em>The newer Haas blasting some component of the CNC mini mill with infinite coolant. The tool offset touch-off base is in the upper right corner of the working area, behind the workpiece. Yes, I know I should have taken out the handle before starting the run.</em></p>
 <p>I wish I had taken more photos from this project; since we were limited to only a few hours a week in lab by MIT policies, we were focused on getting as much done as possible, and only had a spattering of photos from each week to track progress.</p>
 <p>Nevertheless, there was substantial progress made despite a late start to lab access and covid restrictions: by the end of the proper semester, two axes were fully assembled and functional. As restrictions eased up at the end of semester / beginning of summer, the final assembly was put together.</p>
-<p><img src="/projects/cnc/cnc_assembled.jpg" alt="Final assembly"></p>
+<p><img src="/cnc/cnc_assembled.jpg" alt="Final assembly"></p>
 <p><em>The final assembly, as of early June 2021. Photo credit to my friend and teammate, Dani G.</em></p>
 
         </div>

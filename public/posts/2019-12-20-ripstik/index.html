@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+  
+  
 <meta name="keywords" content="Milo J. Hooper">
 <meta property="og:locale" content='en_US'>
 <meta property="og:type" content="article">
@@ -14,7 +16,7 @@
 <meta property="og:description" content="In my junior fall (2019), I took a class at MIT called 2.671, or Measurement and Instrumentation.
 This class taught me a great many things that will come in">
 <meta property="og:url" content="http://localhost:1313/posts/2019-12-20-ripstik/">
-<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<meta property="og:image" content="http://localhost:1313/images/thumbnails/thumb.ripstik.png">
 <link rel="canonical" href="http://localhost:1313/posts/2019-12-20-ripstik/">
 
 <link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
@@ -22,12 +24,17 @@ This class taught me a great many things that will come in">
 <link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
 <link rel="manifest" href='http://localhost:1313/site.webmanifest'>
 
-<link rel="stylesheet" href="http://localhost:1313/css/styles.2cebbe23ce27e3a0a9a361f45a949a29edd235c9f5a1e42d09159d62f5ebf9f4dd0064a371947ab8500793c0e4e3eb986fa947425e9270df38a407317205de34.css" integrity="sha512-LOu&#43;I84n46Cpo2H0WpSaKe3SNcn1oeQtCRWdYvXr&#43;fTdAGSjcZR6uFAHk8Dk4&#43;uYb6lHQl6ScN84pAcxcgXeNA==">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.f7bfcc428f5e330784792085265e8f5529541ebfddc7212584105eb09ff92eafc32634ecf44af37b043cf04838a47ef87e2fbd89622a1b7ea5d8640c03615e61.css" integrity="sha512-97/MQo9eMweEeSCFJl6PVSlUHr/dxyElhBBesJ/5Lq/DJjTs9ErzewQ88Eg4pH74fi&#43;9iWIqG36l2GQMA2FeYQ==">
 </head>
 
   <body>
     <div class="nav-drop">
   <div class="nav-body">
+    <ul>
+	    <li><a href="/assets/MiloHooperResume.pdf">Resume</a></li>
+	    <li><a href="https://defusion.substack.com" target="_blank">Blog</a></li>
+	    <li><a href="/about">About</a></li>
+    </ul>
     <div class="nav-close"></div><div class="color_mode">
   <label for="mode">Toggle Dark Mode</label>
   <input type="checkbox" class="color_choice" id="mode">
@@ -52,13 +59,11 @@ This class taught me a great many things that will come in">
       <h1 class="post_title">Determining the Optimal Ripstik Frequency, Empirically</h1>
       <div class="post_body">
         <div class="post_inner">
-        
-        
           <p>In my junior fall (2019), I took a class at MIT called 2.671, or <em>Measurement and Instrumentation</em>.</p>
 <p>This class taught me a great many things that will come in handy for future academic reports and any possible research that I may produce. Specifically, I learned a lot about uncertainty, as well as how to use frequency-domain analysis in a practical manner to extract information that I am interested in.</p>
 <p>The class had a series of weekly labs that everyone did, in addition to an overarching individual project that took the entire semester.</p>
 <p>Given my natural inclination towards somewhat strange experiments and setups, I naturally chose a proper dynamic system to investigate: the Ripstik.</p>
-<p><img src="/projects/ripstik/ripstik.png" alt="My Ripstik Air Pro"></p>
+<p><img src="/ripstik/ripstik.png" alt="My Ripstik Air Pro"></p>
 <p><em>The Ripstik Air Pro in all its glory.</em></p>
 <p>For context: my floor in my wonderful dorm at MIT was essentially a 300 foot long hallway &ndash; perfect for riding a Ripstik up and down at all hours. Our floor in particular had several Ripstiks (proper as well as fun knockoffs), one of which was mine.</p>
 <p>(Never mind that the one I possessed I had bought for <em>ten dollars</em> the prior year off a graduating senior, who used it as a <em>window opener</em>. Naturally, I could not allow such an injustice to continue, and I gave it proper usage around campus.)</p>
@@ -68,15 +73,15 @@ This class taught me a great many things that will come in">
 <p>So we know that a positive velocity can be produced, and that this positive velocity is produced at a finite, positive, nonzero oscillation frequency.</p>
 <p>That tells us there&rsquo;s got to be a maximum somewhere in there; Rolle&rsquo;s theorem requires it. [Rolle&rsquo;s Theorem tells us that between two endpoints of the same y-value, the derivative must be zero somewhere within those bounds; since we know that the velocity is positive somewhere in there, we know that a maximum must exist.]</p>
 <p>So for my Measurement and Instrumentation project, I set off to find the optimal Ripstik drive frequency.</p>
-<p><img src="/projects/ripstik/apparatus.jpg" alt="Data Acquisition Apparatus"></p>
+<p><img src="/ripstik/apparatus.jpg" alt="Data Acquisition Apparatus"></p>
 <p><em>When I said I wanted to be a cyborg when I grew up, this isn&rsquo;t exactly what I had in mind&hellip;</em></p>
 <p>I used far too many sensors for this in hindsight: two three-axis accelerometers, one under each of the front and back panels of the Ripstik; goniometers to measure leg angles, normalized to my default stance angle; and a single axis accelerometer strapped to my chest to pick up overall body acceleration forward.</p>
 <p>The Ripstik I used was a Ripstik Air Pro, which is objectively a lot more fun and smooth to ride than the clunky bearing-bar ones. I much prefer the solid injection-molded torsion bar.</p>
 <p>I also had all those sensors hooked into a series of LabQuest / Lab Pro / whatever other kind of Vernier sensor-reading hardware needed, hooked into my laptop, while I did speed trials up and down our carpeted hallway at various drive frequencies. I was carrying the laptop the whole time. I only crashed once or twice; nobody was hurt, but the cord to one of the accelerometers did end up getting cut once. Not a huge loss.</p>
-<p><img src="/projects/ripstik/parabolic.png" alt="Curve Fit"></p>
+<p><img src="/ripstik/parabolic.png" alt="Curve Fit"></p>
 <p><em>Graphs of data with error bars and curve fit showing maximum velocity and corresponding frequency. 95% confidence intervals given for data points and curve fit parameters.</em></p>
 <p>Anyhow, I did produce some results &ndash; I found a vaguely parabolic curve with a local maximum of 3.7 ± 0.2 Hz producing a speed of 3.3 ± 1 m/s. The error bars are reasonably large, but definitely point to a specific region of around 3-4 Hz being the optimal drive region &ndash; which is slightly lower than (at least for me) the maximum comfortable drive frequency of 4.2 Hz.</p>
-<p>There&rsquo;s a lot more that went into the project that I won&rsquo;t elaborate ad nauseum about here &ndash; read the final report <a href="/projects/ripstik/ripstik.pdf">Here</a> if you&rsquo;re interested in that!</p>
+<p>There&rsquo;s a lot more that went into the project that I won&rsquo;t elaborate ad nauseum about here &ndash; read the final report <a href="/ripstik/ripstik.pdf">Here</a> if you&rsquo;re interested in that!</p>
 
         </div>
         <div class="post_extra mb-2">

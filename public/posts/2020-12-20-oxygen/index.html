@@ -7,13 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+  
+  
 <meta name="keywords" content="Milo J. Hooper">
 <meta property="og:locale" content='en_US'>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Senior Capstone: Ward-Level, High-Flow Oxygen Generation for Low-Resource Environments">
 <meta property="og:description" content="My senior capstone unfortunately coincided with the fully virtualized semester of Fall 2020. Nevertheless, I was able to have a meaningful team-based project">
 <meta property="og:url" content="http://localhost:1313/posts/2020-12-20-oxygen/">
-<meta property="og:image" content="images/%!s(&lt;nil&gt;)">
+<meta property="og:image" content="http://localhost:1313/images/thumbnails/thumb.oxygen.jpg">
 <link rel="canonical" href="http://localhost:1313/posts/2020-12-20-oxygen/">
 
 <link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
@@ -21,12 +23,17 @@
 <link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
 <link rel="manifest" href='http://localhost:1313/site.webmanifest'>
 
-<link rel="stylesheet" href="http://localhost:1313/css/styles.2cebbe23ce27e3a0a9a361f45a949a29edd235c9f5a1e42d09159d62f5ebf9f4dd0064a371947ab8500793c0e4e3eb986fa947425e9270df38a407317205de34.css" integrity="sha512-LOu&#43;I84n46Cpo2H0WpSaKe3SNcn1oeQtCRWdYvXr&#43;fTdAGSjcZR6uFAHk8Dk4&#43;uYb6lHQl6ScN84pAcxcgXeNA==">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.f7bfcc428f5e330784792085265e8f5529541ebfddc7212584105eb09ff92eafc32634ecf44af37b043cf04838a47ef87e2fbd89622a1b7ea5d8640c03615e61.css" integrity="sha512-97/MQo9eMweEeSCFJl6PVSlUHr/dxyElhBBesJ/5Lq/DJjTs9ErzewQ88Eg4pH74fi&#43;9iWIqG36l2GQMA2FeYQ==">
 </head>
 
   <body>
     <div class="nav-drop">
   <div class="nav-body">
+    <ul>
+	    <li><a href="/assets/MiloHooperResume.pdf">Resume</a></li>
+	    <li><a href="https://defusion.substack.com" target="_blank">Blog</a></li>
+	    <li><a href="/about">About</a></li>
+    </ul>
     <div class="nav-close"></div><div class="color_mode">
   <label for="mode">Toggle Dark Mode</label>
   <input type="checkbox" class="color_choice" id="mode">
@@ -51,8 +58,6 @@
       <h1 class="post_title">Senior Capstone: Ward-Level, High-Flow Oxygen Generation for Low-Resource Environments</h1>
       <div class="post_body">
         <div class="post_inner">
-        
-        
           <p>My senior capstone unfortunately coincided with the fully virtualized semester of Fall 2020. Nevertheless, I was able to have a meaningful team-based project experience working on an oxygen generation system and distribution concept in MIT&rsquo;s 2.75 capstone, Medical Device Design.</p>
 <p>The course covered many relevant topics to medical device engineering; medical applications frequently require more than the typical mechanical engineer&rsquo;s set of tools &ndash; you often need to incorporate electronic components to enable patients and practitioners alike to use your device. You also need to invest a lot of time and energy into talking to stakeholders: you need to understand who&rsquo;s going to use this, and how?</p>
 <p>The project that I ended up working on was the ward-level oxygen generator for low-resource environments. I figured that it would be a solid engineering challenge whose outcome had a clear and demonstrated need in the form of a device specification supplying medical-grade oxygen-enriched air to patients in need of high-flow respiratory therapy. In this case, high flow was taken to mean an upper limit of 60 liters per minute (LPM).</p>
@@ -60,12 +65,12 @@
 <p>By keeping in mind the constraints of working in a lower-resource environment, where consistent electricity supply and expensive manufacturing techniques were not a given, we hope to be able to avoid the fate that many generously but naively donated oxygen generation systems would meet: that of what I&rsquo;m going to call the Fancy Tech Graveyard. When these expensive proprietary systems failed, nobody knew how to service them, and even if they did, getting replacement parts is frequently no easy task.</p>
 <p>We decided after an initial literature review that the preferred method for generating oxygen given our constraints was that of pressure swing adsorption (we decided against electrolysis due to the high power requirement; in order to make them comparatively economical, we would have to recapture some waste energy through a hydrogen fuel cell, which is not exactly easily serviceable in the conditions we targeted).</p>
 <p>The essential mechanism of PSA lies in the active material, often a zeolite (in our initial case, Zeolite 13X). When pressurized, the active material is capable of adsorbing nitrogen out of the atmosphere. Thus, our oxygen generation system is really more of an oxygen purification system. We used models of nitrogen adsorptivity from prior literature, and used MATLAB models to determine an ideal operating point of pressure and quantity of adsorbant material to maximize the purity of air exiting the system. In order to go beyond a first-estimate model, however, we would need to do some actual testing.</p>
-<p><img src="/projects/oxygen/frame.jpg" alt="Me with the frame"></p>
+<p><img src="/oxygen/frame.jpg" alt="Me with the frame"></p>
 <p><em>Me with the frame, early prototype tubing, control board and relays, and most sensors (and filter-dryer). Photo cropped of others for privacy. Mask, because covid. Hopefully by the time you are reading this, we won&rsquo;t need these anymore.</em></p>
 <p>In order to reduce the size and cost requirements for our system architecture, the overall concept requires the use of pulsed-dose delivery (only delivering oxygen on inhale); given estimated breathing patterns of COVID-19 hospitalized patients, we determined that by using pulsed-dose delivery, we could achieve a 4x multiplier in therapeutic equivalent for oxygen delivery. In other words: by pulsing delivery, we could get away with a generator that continuously produced a time-averaged rate of 15 LPM (at standard temperature and pressure) instead of the continuous 60 LPM that we had originally set as our target.</p>
 <p>We selected to a certain quantity of zeolite in either of two iron cylindrical adsorption chambers. Initial testing showed that we were getting best results for a given pressure with certain cycle times. At every cycle switchover, an Arduino microcontroller program would trigger relays and switch several solenoid valves, redirecting the now-saturated chamber&rsquo;s air to atmosphere (thus depressurizing it and purging the zeolites of nitrogen), while the alternate chamber begins to fill and pass oxygen-enriched air on to the output.</p>
 <p>We tested a variety of pressure points (controlled via a pressure regulator placed after a filter-dryer that removes excess moisture from incoming air) and a ball flowmeter at the output allowed us to restrict the flow to various maxima (assuming that there would be &ndash; and there was, in the data &ndash; a tradeoff between quality and quantity of oxygen-enriched air).</p>
-<p><img src="/projects/oxygen/oxygen.jpg" alt="The beast itself"></p>
+<p><img src="/oxygen/oxygen.jpg" alt="The beast itself"></p>
 <p><em>The final prototype as of December 2020. Minor improvements followed in early 2021 (better zeolite, re-sealed chambers, less janky valves).</em></p>
 <p>The final version of the prototype for the class was capable of producing substantially oxygenated air, though this fell short of our initial goal of 15 LPM at &gt;=90% oxygen. However, we did demonstrate that the system architecture we created is capable of creating an output that is in fact, at these flow rates and percentages, already therapeutically applicable (especially in infant wards).</p>
 <p>Note: I&rsquo;ve intentionally left a lot of specific figures, results, and configuration details vague in this, as our work is (hopefully) going to be published. Once I am able to, I will update this article with additional details and our final report.</p>

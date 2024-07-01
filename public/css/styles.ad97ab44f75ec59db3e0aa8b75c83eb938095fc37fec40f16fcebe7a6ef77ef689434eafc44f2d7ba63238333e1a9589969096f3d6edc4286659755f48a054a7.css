@@ -461,8 +461,6 @@ aside h3 {
   position: relative;
   height: 0;
   margin: 1.5rem 0;
-  align-items: center;
-  justify-content: center;
   border-radius: 1rem;
   background-color: var(--bg);
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.17);
@@ -675,7 +673,7 @@ aside h3 {
 }
 
 .nav-brand {
-  font-family: "Impact";
+  font-family: "Cookie";
   font-size: 2em !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;

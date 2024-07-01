@@ -4,7 +4,7 @@ title:  "Robotic Leg Jumping Experiment"
 date:   2019-12-19 08:17:50 -0400
 
 header:
-image: /thumbnails/thumb.glamourshot.png
+image: /thumbnails/thumb.jumpingleg.png
 ---
 
 

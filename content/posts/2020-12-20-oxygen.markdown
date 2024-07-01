@@ -6,7 +6,8 @@ categories: projects
 permalink: /:categories/oxygen
 
 header:
- teaser: /assets/thumbnails/thumb.oxygen.jpg
+
+image: /thumbnails/thumb.oxygen.jpg
 ---
 
 
@@ -24,7 +25,7 @@ We decided after an initial literature review that the preferred method for gene
 
 The essential mechanism of PSA lies in the active material, often a zeolite (in our initial case, Zeolite 13X). When pressurized, the active material is capable of adsorbing nitrogen out of the atmosphere. Thus, our oxygen generation system is really more of an oxygen purification system. We used models of nitrogen adsorptivity from prior literature, and used MATLAB models to determine an ideal operating point of pressure and quantity of adsorbant material to maximize the purity of air exiting the system. In order to go beyond a first-estimate model, however, we would need to do some actual testing. 
 
-![Me with the frame](/projects/oxygen/frame.jpg)
+![Me with the frame](/oxygen/frame.jpg)
 
 *Me with the frame, early prototype tubing, control board and relays, and most sensors (and filter-dryer). Photo cropped of others for privacy. Mask, because covid. Hopefully by the time you are reading this, we won't need these anymore.*
 
@@ -34,7 +35,7 @@ We selected to a certain quantity of zeolite in either of two iron cylindrical a
 
 We tested a variety of pressure points (controlled via a pressure regulator placed after a filter-dryer that removes excess moisture from incoming air) and a ball flowmeter at the output allowed us to restrict the flow to various maxima (assuming that there would be -- and there was, in the data -- a tradeoff between quality and quantity of oxygen-enriched air).
 
-![The beast itself](/projects/oxygen/oxygen.jpg)
+![The beast itself](/oxygen/oxygen.jpg)
 
 *The final prototype as of December 2020. Minor improvements followed in early 2021 (better zeolite, re-sealed chambers, less janky valves).*
 

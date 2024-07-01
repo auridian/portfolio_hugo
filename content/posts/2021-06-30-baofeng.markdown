@@ -6,7 +6,8 @@ categories: projects
 permalink: /:categories/baofeng
 
 header:
- teaser: /assets/thumbnails/thumb.baofeng.jpg
+
+image: /thumbnails/thumb.baofeng.jpg
 ---
 
 I don't like giving up on technological objects when they first break; I instinctively try to figure out a way to fix them. This has paid off numerous times: people have thrown away air conditioners that are perfectly functional, save for the fact that they tripped the GFI once; and I have taken thrown-out alarm clocks that couldn't produce alarm sounds, and opened them up to see what was wrong, only to discover that one of the solder joints leading to the speaker had been broken! A quick re-soldering and reassembly later, it was as good as new!
@@ -17,19 +18,19 @@ After hanging out with the MIT Radio Society for Field Day in June 2021, I disco
 
 The first thing to do was to separate the base and reveal the PCB beneath, which was a lot more tedious than one might expect; though the bottom of the (all injection-molded, of course) base had a small impression where clearly similar parts used screws to assemble charger bases, this was instead a partial snap fit -- wonderfully simple to assemble, but a bit of a pain to pry apart. Thankfully, I was able to wedge several iFixit flathead bits in the non-snap-fit sections and, after inserting no less than *four* flathead bits in, I was able to pop out the snap fit -- with minimal destruction, too!
 
-![Wedging the first flathead in.](/projects/baofeng/opening.jpg)
+![Wedging the first flathead in.](/baofeng/opening.jpg)
 
 *Though the picture does not show it well, I could see reasonably well within the hollow CH-5 interior and spot the problem -- a break in the charger's PCB!*
 
 The brains of the CH-5 charger are shown below:
 
-![Broken PCB](/projects/baofeng/broken.jpg)
+![Broken PCB](/baofeng/broken.jpg)
 
 *Can you spot the problem?*
 
 This is what it should have looked like (well, sort of):
 
-![Together](/projects/baofeng/full.jpg)
+![Together](/baofeng/full.jpg)
 
 *Sadly, repairing a PCB isn't as easy as just shoving the broken part back onto the rest of the PCB.*
 
@@ -39,7 +40,7 @@ I'll also note that the edition of this charger PCB is "NEW-5W-VER11" with a dat
 
 I initially had assumed that there was some op amp or linear regulator action happening in the SOP8 8-pin component to control the stepdown; I had to look closer at what the component was to do a lookup.
 
-![What's this 8 pin object?](/projects/baofeng/farside.jpg)
+![What's this 8 pin object?](/baofeng/farside.jpg)
 
 *A closer view of resistors and capacitors and that SOP8.*
 
@@ -49,18 +50,18 @@ I also take an approving notice of the bypass capacitors to ground from high sid
 
 The two solder joints on the far left there are the bottom end of the status LED that lights up the charger when power is applied.
 
-![The middle](/projects/baofeng/middle.jpg)
+![The middle](/baofeng/middle.jpg)
 
 *A view of the middle of that board up close as well, with the resistor shown.*
 
 In order to complete the repair of the charger, I used an Exacto knife to painstakingly yet carefully scrape up some of the light green on the hot side of the 10 V trace in order to solder a connection; the ground side did not need such a connection, as there was a handy solder blob on the unbroken side that I could simply attach a jumper to. A little hot glue later, and it was ready to be put back together!
 
-![Hot glue job](/projects/baofeng/hotglued.jpg)
+![Hot glue job](/baofeng/hotglued.jpg)
 
 *I cleaned it up a little more after this shot was taken, but forgot to take another picture before reassembling. Not the prettiest interior, but better than ending up in the scrapyard.*
 
 I redid the snap fit and sure enough, the barrel jack once again snugly fit into the charger base!
 
-![Fixed Charger](/projects/baofeng/baofeng.jpg)
+![Fixed Charger](/baofeng/baofeng.jpg)
 
 *Just like new!*
