@@ -6,8 +6,22 @@
     <description>Recent content in Posts on Milo J. Hooper</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 08:17:50 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 30 Sep 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Foray Into Contracting: PVD Products</title>
+      <link>http://localhost:1313/posts/2023-09-30-pvd.markdown/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023-09-30-pvd.markdown/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.&#xA;Save it somewhere specific as we will be using it in the next step.&#xA;More complete instructions are available at Install Hugo&#xA;Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.&#xA;Follow the following steps:&#xA;Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313 Corresponding pseudo commands:</description>
+    </item>
+    <item>
+      <title>My Startup Journey with Mytide Therapeutics</title>
+      <link>http://localhost:1313/posts/2023-06-30-mytide.markdown/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023-06-30-mytide.markdown/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.&#xA;Save it somewhere specific as we will be using it in the next step.&#xA;More complete instructions are available at Install Hugo&#xA;Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.&#xA;Follow the following steps:&#xA;Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313 Corresponding pseudo commands:</description>
+    </item>
     <item>
       <title>Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</title>
       <link>http://localhost:1313/posts/2021-05-30-cnc/</link>
@@ -63,6 +77,13 @@
       <pubDate>Thu, 19 Dec 2019 08:17:50 -0400</pubDate>
       <guid>http://localhost:1313/posts/2019-12-19-jumpingleg/</guid>
       <description>In the fall of my junior year at MIT (2019), I took 2.74, or Bio-Inspired Robotics. It was a very interesting course.&#xA;It taught me about impedance control, about how to practically mimic spring-mass-damper like behavior out of, say, a two-motor driven appendage. You could create, depending on what use case you wanted, behavior to mimic those k-m-b values, using this impedance control.&#xA;We also learned a lot about the various ways you could mimic legs, how different gaits work in two versus four legged animals, and how one might go about recreating that type of behavior in a legged robot.</description>
+    </item>
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>http://localhost:1313/posts/2024-06-15-dti.markdown/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024-06-15-dti.markdown/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.&#xA;Save it somewhere specific as we will be using it in the next step.&#xA;More complete instructions are available at Install Hugo&#xA;Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.&#xA;Follow the following steps:&#xA;Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313 Corresponding pseudo commands:</description>
     </item>
   </channel>
 </rss>

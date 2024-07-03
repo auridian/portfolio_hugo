@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>My Startup Journey with Mytide Therapeutics | Milo J. Hooper</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+  
+<meta name="keywords" content="Milo J. Hooper">
+<meta property="og:locale" content='en_US'>
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Startup Journey with Mytide Therapeutics">
+<meta property="og:description" content="My first job out of undergrad was at a now-defunct company called Mytide Therapeutics. The premise was to have an automated system of manufacturing a class of">
+<meta property="og:url" content="http://localhost:1313/posts/2023-06-30-mytide.markdown/">
+<meta property="og:image" content="http://localhost:1313/images/images/stuck.jpg">
+<link rel="canonical" href="http://localhost:1313/posts/2023-06-30-mytide.markdown/">
+
+<link rel="apple-touch-icon" sizes="180x180" href='http://localhost:1313/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='http://localhost:1313/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes='16x16' href='http://localhost:1313/favicon-16x16.png'>
+<link rel="manifest" href='http://localhost:1313/site.webmanifest'>
+
+<link rel="stylesheet" href="http://localhost:1313/css/styles.b075dcbc6094d5ff7c1ef1aabf0a906a380572762d25a7492cc98c557f7ad17217831692a917077be7726f378c839297e8aafd685fea40155ac07dc9b1e22dc9.css" integrity="sha512-sHXcvGCU1f98HvGqvwqQajgFcnYtJadJLMmMVX960XIXgxaSqRcHe&#43;dybzeMg5KX6Kr9aF/qQBVawH3JseItyQ==">
+</head>
+
+  <body>
+    <div class="nav-drop">
+  <div class="nav-body">
+    <ul>
+	    <li><a href="/assets/MiloHooperResume.pdf">Resume</a></li>
+	    <li><a href="https://defusion.substack.com" target="_blank">Blog</a></li>
+	    <li><a href="/about">About</a></li>
+    </ul>
+    <div class="nav-close"></div><div class="color_mode">
+  <label for="mode">Toggle Dark Mode</label>
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+  </div>
+</div>
+<header class="nav">
+  <nav class="nav-menu">
+    <a href=http://localhost:1313/ class="nav-brand nav_item">
+        Milo J. Hooper</a>
+    <div class="nav_bar-wrap">
+      <div class="nav_bar"></div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      
+  <div class="wrap mt post">
+    <div><p class=post_date>30. June 2023</p>
+      <h1 class="post_title">My Startup Journey with Mytide Therapeutics</h1>
+      <div class="post_body">
+        <div class="post_inner">
+          <p>My first job out of undergrad was at a now-defunct company called Mytide Therapeutics. The premise was to have an automated system of manufacturing a class of pharmaceuticals known as peptides. There are many stages involved in the production of a peptide &ndash; from synthesis to cleavage, lyophilization to weighing, LCMS analysis to purification of product. The goal was to fully automate this to the point that all an operator would need to do would be to load fresh vials and top off reagents periodically on the input, and remove trays of complete, weighed, analyzed, lyophilized custom peptides for labeling, packaging, and shipment to customers.</p>
+<p>My role for the first half year or so was primarily engineering support for the Gen1 peptide system, which was comprised of two separated workcells and various manual chemist interventions. I spent a lot of time troubleshooting error states and failure modes with the chemistry team, and would take my learnings back to the office to try to devise means of preventing the problems from returning (or if they did return, mitigating their consequences).</p>
+<p>For instance: I noticed that we had a certain type of pump for moving the nasty chemicals (dimethylformamide, piperidine, etc) throughout the system whose failure mode when the sealing material degraded was to leak out the side. Since the stepper motors driving these pumps were directly underneath the pumps, that frequently led to completely unnecessarily destroying the motor alongside with the pump when these leaks happened. I designed, tested (off system first, then on system) and integrated a leak catch diverter system that a) provided an initial vessel to hold the leak fluid, and b) allow an Idex fitting to be inserted into the side of the catch chamber, safely draining it into the waste carboy for the system.</p>
+<p>Other tasks in that first segment of my time at Mytide included the shadowing of the lab team and finding places where either unsafe or highly repetitive tasks could be mechanically amplified.</p>
+<h2 id="blade-comb">Blade Comb</h2>
+<p>One of these resulted in what I call the Blade Comb.</p>
+<p><img src="/images/bladecomb.jpg" alt="Blade Comb"></p>
+<p>This might look somewhat concerning, but it was actually quite safe (if I were to make any change to it, it would be to add a clear barrier mounted to the metal portion on either side to make it even harder to hurt yourself with).</p>
+<p>This device allowed one to create a controlled incision size in a membrane for 96-well SBS format lyophilization trays, one row at a time in a single stroke. The prior standard operating procedure for preparing a tray and its membrane was to take a needle and poke <em>five</em> holes in <em>every single one of the 96 wells</em>. Talk about carpal tunnel!</p>
+<p>Tests were performed with vials in similar lyophilization trays at various incision sizes to recreate the same mass flow characteristics in the lyo as we had with the five hole pokes.</p>
+<p>The Blade Comb was compact, functional, and designed for safety: the blades would only engage when you pinched <em>both</em> sides of the sheet metal catches on top to enable plunging. The 3D-printed (SLA) piece held springs and shoulder bolts to guide the travel, and to prevent binding, the sliding surface on the 3D printed piece was made to be a narrow flexure. The result was a smooth motion with controlled forces due to carefully chosen springs for maximal ergonomics. Once you let go (intentionally or unintentionally), the blades would immediately retract into a safe state.</p>
+<h2 id="filter-press">Filter Press</h2>
+<p>Another problem I witnessed helping out in the lab at Mytide was that some of the peptides needed to be pushed through narrow filters in a few processing stages. Some peptides were fine, but others required unsafe levels of force, especially when combined with the fact that there was no fixture at all for doing so. I feared for the chemists&rsquo; fingers!</p>
+<p>Eventually I was able to design and deploy a sheet metal-based system using an air cylinder and a manual valve to support filtration activities. I designed 3D-printed vial holders that you could push back into a vee-shaped catch that would concentrically align the vial with the air cylinder. I also designed the mating features to mount the air cylinder to the sheet metal framing and to mount the filter and syringe to the air cylinder.</p>
+<p>I threw in a blast shield (in the event of vial product explosion, misalignment, etc, though I never witnessed it in practice) and blockaded the ability to lower the piston when the door was not in an open state.</p>
+<p>Unfortunately I don&rsquo;t seem to have much in the way of media currently of the filter press, when I find a photo or video (I know they exist) I will upload here.</p>
+<h2 id="gen2---a-foray-into-system-engineering-and-integration">Gen2 - a foray into system engineering and integration</h2>
+<p>Eventually as we fleshed out the engineering team, my role pivoted into being a kind of Gen1 guide for the larger engineering effort of creating a Gen2. Gen2 was set to bring the two separate Gen1 workcells together in one enclosure, scale up production dramatically, and eliminate most if not all of the headaches associated with the Gen1 system.</p>
+<p>I worked primarily on the robot end effectors, the heater system for the first-stage synthesizer, and the overall system engineering. I also worked on the scheme for the detection and automatic alignment of the trays that would hold the vials and get moved around the workcell.</p>
+<p>All of the pain points of Gen1 I sought to stamp out in the design of Gen2, frequently issuing guidance for how different modules other engineers were working on might interact with each other and with the SCARA robots that were conducting the peptide orchestra. I consulted with the chemistry team frequently to determine their process requirements (what lead lengths mattered most in LCMS? how many columns do we really need at different temperatures? and so on). I also acted as the intermediary between the W2 engineering team and a mechanical design contractor working on the frame and electrical system layout, eventually advocating for full hire into the team.</p>
+<p>There are far too many interesting things I worked on at Mytide to cram into a blogpost, so I will briefly talk about a few: the tube gripper, the tray gripper, and the overall system design.</p>
+<h3 id="tube-gripper">Tube Gripper</h3>
+<p>The tube gripper was a fun slick mechanism that used torsion springs, press fits, a cam traveled path, and taught me about the danger of galling. It had two grip positions, one with small compliant fingers to delicately pluck a vial out of a tray of its friends and a more aggressive toothed grip to grab a rib on the side of some of the vials to force it into and out of certain workstations. It was driven by an air cylinder to achieve a relatively constant force on the target.</p>
+<p>Here&rsquo;s a fun video of an early partial prototype:</p>
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/yq7J20jAaoY?controls=1&rel=0" loading="lazy"></iframe>
+</div>
+
+<p>Once converted to metal and fully assembled, I took the final version of the tube gripper through a life test gripping and releasing the various types of vials one would expect to encounter in the system, and ultimately it made it to approximately 1.4 million actuations before severe fretting occurred. We only needed ~0.75 million actuations per year on average anyway &ndash; so one could replace it about every 15 months and still be well within the safe, non-fretting zone.</p>
+<h3 id="tray-gripper">Tray Gripper</h3>
+<p>The tray gripper was the result of a desire to have a consistent grip on the trays regardless of minor deviations in robot or tray position, unlike in the Gen1 system. The Gen2 tray grip featured a quasi-kinematic grip with a bit of compliance thrown in: two vees and a conical face on each tray were met with three hemispheres on fingers on a kinematic tri-grip, as demonstrated in the following video:</p>
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/rr4hl4hyTvg?controls=1&rel=0" loading="lazy"></iframe>
+</div>
+
+<p>The trays themselves also were designed to be injection molded (with prototyping modifications for 3D printing) and had features that would create a proper kinematic coupling of three vees on deck mounts and three 400-series stainless steel balls in the trays. The 400-series stainless were magnetically responsive enough to drive little bouncing magnets in the deck interface plates that would a) fly past a hall effect sensor, indicating proper tray placement to the system and b) once elevated, provide a bit of an additional preload force in addition to the weight of the tray and contents to further seat the trays in the correct positions!</p>
+<h3 id="system-layout">System Layout</h3>
+<p>Laying out the entire system felt like being an urban planner. Or playing Tetris. Or trying to cram ten pounds of stuff into a five pound bag.</p>
+<p>We never got to fully build it (the deck and table came in, the synthesizer was being actively built up, the robots were in, the end effector had been tested and was built up, and ever more parts were coming together when we ran out of money).</p>
+<p>Here is a render of the full system that I helped architect from the founder:</p>
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/ydIoXZ6B0dw?controls=1&rel=0" loading="lazy"></iframe>
+</div>
+
+
+        </div>
+        <div class="post_extra mb-2">
+          
+<div class="copy" data-before="Share Story" data-after="Link Copied">
+  <svg class="icon">
+    <use xlink:href="#copy"></use>
+  </svg>
+</div>
+        </div>
+        <div>
+        
+        </div>
+      </div>
+    </div>
+    <a href=http://localhost:1313/ class="post_nav"><span class="post_next">Latest Posts
+      <svg class="icon icon_scale">
+        <use xlink:href="#double-arrow"></use>
+      </svg>
+    </span></a>
+  </div>
+
+    </main>
+    <footer class="footer wrap pale">
+  <p>&copy;&nbsp;<span class="year"></span>&nbsp;Milo J. Hooper</p>
+  <p class="attribution upcase">Designed by  <a href = '<no value>' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'><no value></a></p>
+</footer>
+
+
+<script src="http://localhost:1313/js/index.min.0c8b9f3d37bbc2061bb8f9bfac9713652c85a41501d73b2b5def4579e67a40a46526acbbb34cd6028725be74381d9c780229983b1d464d85ff85b378f64ebe4d.js"></script>
+
+    <svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 699.428 699.428" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19L502.714 0zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612v306zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857h-65.572zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835 0 12.065 9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"></path>
+  </symbol>
+  <symbol viewBox="0 0 53 42" xmlns="http://www.w3.org/2000/svg" id="double-arrow">
+    <path d="M.595 39.653a1.318 1.318 0 0 1 0-1.864L16.55 21.833a1.318 1.318 0 0 0 0-1.863L.595 4.014a1.318 1.318 0 0 1 0-1.863L2.125.62a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0zm29 0a1.318 1.318 0 0 1 0-1.864L45.55 21.833a1.318 1.318 0 0 0 0-1.863L29.595 4.014a1.318 1.318 0 0 1 0-1.863l1.53-1.53a1.318 1.318 0 0 1 1.864 0l19.35 19.349a1.318 1.318 0 0 1 0 1.863l-19.35 19.35a1.318 1.318 0 0 1-1.863 0z"></path>
+  </symbol>
+</svg>
+  </body>
+</html>

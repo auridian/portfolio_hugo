@@ -13,7 +13,21 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>I am a mechanical engineering graduate of MIT (class of 2021). My focus was on electromechanical systems applied to the biological domain.&#xA;Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so. This often takes the form of medical devices, but I am not confined to working in that domain; anything that serves this purpose is fair game.</description>
+      <description>Hi! I&amp;rsquo;m Milo J. Hooper, a mechanical engineer based out of Manchester, New Hampshire. I graduated in 2021 from MIT with a focus on electromechanical systems applied to the biological domain.&#xA;Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so.&#xA;I originally envisioned myself working on medical devices, and I still suspect that will occur to some degree, but my first few years out of undergrad have taken me more into a manufacturing, automation, and design consulting direction.</description>
+    </item>
+    <item>
+      <title>First Foray Into Contracting: PVD Products</title>
+      <link>http://localhost:1313/posts/2023-09-30-pvd.markdown/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023-09-30-pvd.markdown/</guid>
+      <description>A taste of what&amp;rsquo;s possible After Mytide imploded at the beginning of Summer 2023, I took a few months to casually apply to jobs and spend a lot of time traveling and resetting myself. Despite the basement of my house catching on fire, it was overall an excellent summer. In parallel to a halfhearted job search and interview process, I also made my first steps into the world of contracting.</description>
+    </item>
+    <item>
+      <title>My Startup Journey with Mytide Therapeutics</title>
+      <link>http://localhost:1313/posts/2023-06-30-mytide.markdown/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023-06-30-mytide.markdown/</guid>
+      <description>My first job out of undergrad was at a now-defunct company called Mytide Therapeutics. The premise was to have an automated system of manufacturing a class of pharmaceuticals known as peptides. There are many stages involved in the production of a peptide &amp;ndash; from synthesis to cleavage, lyophilization to weighing, LCMS analysis to purification of product. The goal was to fully automate this to the point that all an operator would need to do would be to load fresh vials and top off reagents periodically on the input, and remove trays of complete, weighed, analyzed, lyophilized custom peptides for labeling, packaging, and shipment to customers.</description>
     </item>
     <item>
       <title>Building a CNC Mini Mill with the Laboratory for Manufacturing and Productivity during Covid</title>

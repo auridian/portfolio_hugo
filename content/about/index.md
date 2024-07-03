@@ -5,8 +5,14 @@ permalink: /about/
 date: 2024-06-30
 ---
 
-I am a mechanical engineering graduate of MIT (class of 2021). My focus was on electromechanical systems applied to the biological domain.
+Hi! I'm Milo J. Hooper, a mechanical engineer based out of Manchester, New Hampshire. I graduated in 2021 from MIT with a focus on electromechanical systems applied to the biological domain.
 
-Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so. This often takes the form of medical devices, but I am not confined to working in that domain; anything that serves this purpose is fair game. My coursework and experiences are widely applicable. Thermal-fluidic analysis, the use of finite element methods, dynamics and controls, CAD and design for manufacturing and the delicately balanced incorporation of various stakeholders' input in projects are among the many skills I've learned in and out of the classroom.
+Ultimately, I seek to enhance the lived human experience through technological interventions, employing whatever domains of knowledge are necessary to do so, and continually expanding my knowledge in order to better do so. 
 
-From February 2020 to June 2021 (I had to resign upon graduation), I was the president of W1XM, the MIT UHF Repeater Association (the sister club to the MIT Radio Society, W1MX). I’m an extra class radio amateur known as AI1XR. See the projects blog for a discussion about various activities I’ve been involved with in the MIT Radio Society, like helping raise two million dollars to save an iconic piece of the Cambridge skyline!  
+I originally envisioned myself working on medical devices, and I still suspect that will occur to some degree, but my first few years out of undergrad have taken me more into a manufacturing, automation, and design consulting direction. 
+
+This portfolio site originally housed (and still does) many of my school-era projects, but I've only recently started using it again to dump some interesting information about some prior work experiences. I hope to post further personal projects soon!
+
+As of July 2024 I have also founded my deliberately-broad-scoped technology company known as Auridium Technologies LLC (see auridium.tech for more details). 
+
+Immediately following the public launch of Auridium, I am also going to start firing off articles at my new non-technical blog, Defusion (defusion.substack.com). I hope to start writing roughly a post a week there, but we will see how that goes.
