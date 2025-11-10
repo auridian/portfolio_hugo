@@ -1,10 +1,10 @@
 export function NotFoundPage() {
   return (
     <section className="not-found">
-      <h2>Lost in the void</h2>
+      <h2>why are you here??</h2>
       <p>
-        page not found, probably in /dev/null. Head back to {' '}
-        <a href="/">home</a> or explore the <a href="/posts">blog archive</a>.
+        you appear to be swimmming in <a href="/dev/null">/dev/null</a>. Head back to {' '}
+        <a href="/">home</a>.
       </p>
     </section>
   );

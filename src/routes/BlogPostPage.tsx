@@ -2,6 +2,19 @@ import { useEffect, useState } from 'react';
 import { useLoaderData, type LoaderFunctionArgs } from 'react-router-dom';
 import { getPostBySlug, type PostMeta } from '../lib/posts';
 
+function formatPostDate(dateString: string) {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) {
+    return dateString;
+  }
+
+  const year = String(date.getUTCFullYear()).padStart(5, '0');
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
 export async function blogPostLoader({ params }: LoaderFunctionArgs): Promise<PostMeta> {
   const slug = params.slug ?? '';
   const entry = getPostBySlug(slug);
@@ -40,10 +53,10 @@ export function BlogPostPage() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
         const article = doc.querySelector('article.post');
-        const legacy = doc.querySelector('.legacy-banner');
+        //const legacy = doc.querySelector('.legacy-banner');
         if (!cancelled) {
           setBodyHtml(article ? article.innerHTML : text);
-          setLegacyNotice(legacy ? legacy.innerHTML : null);
+          //setLegacyNotice(legacy ? legacy.innerHTML : null);
         }
       } catch (err) {
         if (!cancelled) {
@@ -64,9 +77,7 @@ export function BlogPostPage() {
       <header className="blog-post-header">
         <div>
           <h2>{entry.title}</h2>
-          {entry.date && (
-            <time dateTime={entry.date}>{new Date(entry.date).toLocaleDateString()}</time>
-          )}
+          {entry.date && <time dateTime={entry.date}>{formatPostDate(entry.date)}</time>}
         </div>
         {entry.categories.length > 0 && (
           <ul className="blog-post-tags">
@@ -77,9 +88,9 @@ export function BlogPostPage() {
         )}
       </header>
 
-      {legacyNotice && (
+      {/*{legacyNotice && (
         <aside className="blog-post-legacy" dangerouslySetInnerHTML={{ __html: legacyNotice }} />
-      )}
+      )}*/}
 
       {error ? (
         <p className="blog-post-error">{error}</p>

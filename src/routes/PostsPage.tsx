@@ -1,5 +1,18 @@
 import { getPosts } from '../lib/posts';
 
+function formatPostDate(dateString: string) {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) {
+    return dateString;
+  }
+
+  const year = String(date.getUTCFullYear()).padStart(5, '0');
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
 export function PostsPage() {
   const posts = getPosts();
   const hasPosts = posts.length > 0;
@@ -9,9 +22,7 @@ export function PostsPage() {
       <header className="section-header">
         <h2>Posts</h2>
         <p>
-          Legacy articles are being remixed into new canonical URLs under <code>/blog/</code>. Expect project breakdowns,
-          build logs, and occasional philosophical detours.
-          
+          Legacy articles are being remixed into new canonical URLs under <code>/blog/</code>. This area is under construction, expect things to break.
         </p>
       </header>
       {hasPosts ? (
@@ -22,18 +33,18 @@ export function PostsPage() {
                 <h3>
                   <a href={post.htmlPath}>{post.title}</a>
                 </h3>
-                {post.date && <time dateTime={post.date}>{new Date(post.date).toLocaleDateString()}</time>}
+                {post.date && <time dateTime={post.date}>{formatPostDate(post.date)}</time>}
               </header>
               <p>{post.summary}</p>
               <footer>
                 <a className="btn tertiary" href={post.htmlPath}>
                   Read post
                 </a>
-                {post.legacyPermalink && (
+                {/*post.legacyPermalink && (
                   <a className="legacy-link" href={post.legacyPermalink}>
                     Original permalink
                   </a>
-                )}
+                )}*/}
               </footer>
             </article>
           ))}

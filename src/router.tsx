@@ -4,6 +4,7 @@ import { HomePage } from './routes/HomePage';
 import { PostsPage } from './routes/PostsPage';
 import { ResumePage } from './routes/ResumePage';
 import { LinksPage } from './routes/LinksPage';
+import { FunPage } from './routes/FunPage';
 import { BlogPostPage, blogPostLoader } from './routes/BlogPostPage';
 import { NotFoundPage } from './routes/NotFoundPage';
 import { NowPage } from './routes/NowPage';
@@ -12,6 +13,8 @@ import { StatsPage } from './routes/StatsPage';
 import { AboutPage } from './routes/AboutPage';
 import { ContactPage } from './routes/ContactPage';
 import { MetaPage } from './routes/MetaPage';
+import { ServicesPage } from './routes/ServicesPage';
+import { DevNullPage } from './routes/DevNullPage';
 
 export const router = createBrowserRouter([
   {
@@ -35,8 +38,16 @@ export const router = createBrowserRouter([
         element: <ProjectsPage />
       },
       {
+        path: 'fun',
+        element: <FunPage />
+      },
+      {
         path: 'stats',
         element: <StatsPage />
+      },
+      {
+        path: 'services',
+        element: <ServicesPage />
       },
       {
         path: 'about',
@@ -57,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: 'links',
         element: <LinksPage />
+      },
+      {
+        path: 'dev/null',
+        element: <DevNullPage />
       },
       {
         path: 'blog/:slug',
