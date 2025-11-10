@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData, type LoaderFunctionArgs } from 'react-router-dom';
+import { Link, useLoaderData, type LoaderFunctionArgs } from 'react-router-dom';
 import { getPostBySlug, type PostMeta } from '../lib/posts';
 
 function formatPostDate(dateString: string) {
@@ -87,6 +87,12 @@ export function BlogPostPage() {
           </ul>
         )}
       </header>
+
+      <nav className="blog-post-nav">
+        <Link className="btn tertiary" to="/posts">
+          ← Back to posts
+        </Link>
+      </nav>
 
       {/*{legacyNotice && (
         <aside className="blog-post-legacy" dangerouslySetInnerHTML={{ __html: legacyNotice }} />

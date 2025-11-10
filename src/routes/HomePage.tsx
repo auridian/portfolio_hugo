@@ -33,7 +33,6 @@ export function HomePage() {
           <p className="home-kicker"></p>
           <h1 className="home-orb__title">Milo J. Hooper</h1>
           <p className="home-orb__intro">
-            sovereign economic agent
           </p>
         </div>
 
