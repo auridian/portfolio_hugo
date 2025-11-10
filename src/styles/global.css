@@ -464,6 +464,44 @@ section:not(.home--orb-focused):hover::after {
   text-align: center;
 }
 
+@media (max-width: 640px) {
+  .home--orb-focused {
+    --orb-size: min(78vw, 360px);
+    --spoke-distance: calc(var(--orb-size) * 0.42 + clamp(18px, 6vmin, 40px));
+    padding: clamp(0.9rem, 4vh, 1.6rem) clamp(1rem, 6vw, 1.8rem);
+  }
+
+  .home-orb {
+    width: var(--orb-size);
+    height: var(--orb-size);
+  }
+
+  .home-orb__core {
+    gap: clamp(0.75rem, 4vw, 1rem);
+    padding: clamp(1.1rem, 5vw, 1.6rem);
+  }
+
+  .home-orb__intro {
+    max-width: 18ch;
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+
+  .orb-spoke {
+    width: clamp(72px, 26vw, 92px);
+    gap: 0.15rem;
+    padding: 0.85rem 0.65rem;
+  }
+
+  .orb-spoke__label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
+  .orb-spoke__meta {
+    display: none;
+  }
+}
+
 
 .btn {
   display: inline-flex;
