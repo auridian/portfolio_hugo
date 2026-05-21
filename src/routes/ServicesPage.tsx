@@ -9,8 +9,6 @@ export function ServicesPage() {
         <li>website development and custom domain setup</li>
         <li>engineering support</li>
         <li>troubleshooting hardware and software</li>
-        <li>unsticking yourself mentally</li>
-        <li>help moving large and/or obnoxious items</li>
         <li>ai-enabled augmentation to become a sovereign economic agent</li>
       </ul>
       <p className="text-subtle">Additional interest and inquiries can be made via means on the <a href="/contact">contact</a> page.</p>

@@ -242,6 +242,8 @@ section:not(.home--orb-focused):hover::after {
 .home--orb-focused {
   --orb-size: clamp(340px, min(54vmin, 46vw), 700px);
   --spoke-distance: calc(var(--orb-size) * 0.46 + clamp(22px, 7vmin, 60px));
+  --orb-core-clip: polygon(14% 3%, 92% 0%, 100% 34%, 86% 78%, 62% 98%, 28% 94%, 2% 64%, 0% 22%);
+  --orb-spoke-clip: polygon(18% 4%, 92% 12%, 100% 42%, 86% 86%, 58% 100%, 12% 90%, 0% 58%, 6% 16%);
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
@@ -331,7 +333,6 @@ section:not(.home--orb-focused):hover::after {
   z-index: 2;
   width: min(74%, calc(var(--orb-size) * 0.74));
   aspect-ratio: 1;
-  border-radius: 50%;
   padding: clamp(1.45rem, 4.2vw, 2.35rem);
   display: flex;
   flex-direction: column;
@@ -347,7 +348,7 @@ section:not(.home--orb-focused):hover::after {
   overflow: hidden;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  clip-path: circle(50%);
+  clip-path: var(--orb-core-clip, circle(50%));
 }
 
 .home-orb__core::before,
@@ -355,8 +356,8 @@ section:not(.home--orb-focused):hover::after {
   content: '';
   position: absolute;
   inset: 12%;
-  border-radius: 50%;
   pointer-events: none;
+  clip-path: var(--orb-core-clip, circle(50%));
 }
 
 .home-orb__core::before {
@@ -408,12 +409,25 @@ section:not(.home--orb-focused):hover::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: clamp(88px, 18vmin, 150px);
+  width: clamp(90px, 19vmin, 150px);
   aspect-ratio: 1;
-  border-radius: 999px;
-  background: linear-gradient(145deg, rgba(16, 20, 32, 0.9), rgba(9, 12, 20, 0.78));
-  border: 1px solid rgba(83, 245, 255, 0.42);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35), inset 0 0 24px rgba(83, 245, 255, 0.22);
+  --spoke-clip: var(--orb-spoke-clip, polygon(10% 10%, 34% 2%, 70% 2%, 92% 8%, 100% 34%, 90% 90%, 48% 100%, 8% 80%));
+  --spoke-neon: #69fddb;
+  --spoke-edge: color-mix(in srgb, var(--spoke-neon) 75%, white 5%);
+  --spoke-fill-angle: 140deg;
+  --spoke-fill-start: rgba(16, 24, 38, 0.92);
+  --spoke-fill-end: rgba(7, 9, 18, 0.88);
+  clip-path: var(--spoke-clip);
+  background:
+    linear-gradient(130deg, rgba(255, 255, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 26% 20%, rgba(255, 255, 255, 0.28), transparent 52%),
+    linear-gradient(var(--spoke-fill-angle), var(--spoke-fill-start), var(--spoke-fill-end));
+  border: none;
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.42),
+    inset 0 -18px 34px rgba(0, 0, 0, 0.55),
+    inset 0 0 28px color-mix(in srgb, var(--spoke-neon) 25%, transparent),
+    0 0 28px color-mix(in srgb, var(--spoke-neon) 35%, transparent);
   text-decoration: none;
   display: grid;
   place-content: center;
@@ -421,33 +435,68 @@ section:not(.home--orb-focused):hover::after {
   transform-origin: center;
   pointer-events: auto;
   z-index: 5;
+  isolation: isolate;
   --orb-angle: 0deg;
   transform:
     translate(-50%, -50%) rotate(var(--orb-angle))
     translateY(calc(-1 * var(--spoke-distance)))
     rotate(calc(-1 * var(--orb-angle)));
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .orb-spoke::before {
   content: '';
   position: absolute;
-  inset: 12%;
-  border-radius: inherit;
-  border: 1px solid rgba(115, 255, 191, 0.22);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  inset: 8%;
+  clip-path: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 70%),
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.35), transparent 55%);
+  border: 1px solid color-mix(in srgb, var(--spoke-edge) 70%, transparent);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  pointer-events: none;
+}
+
+.orb-spoke::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: inherit;
+  border: 1.6px solid var(--spoke-edge);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--spoke-neon) 70%, transparent),
+    0 0 18px color-mix(in srgb, var(--spoke-neon) 60%, transparent),
+    0 0 36px var(--spoke-neon);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: box-shadow 0.3s ease;
+  z-index: -1;
 }
 
 .orb-spoke:hover,
 .orb-spoke:focus {
-  border-color: rgba(115, 255, 191, 0.45);
-  box-shadow: 0 26px 50px rgba(115, 255, 191, 0.25), inset 0 0 30px rgba(115, 255, 191, 0.25);
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, 0.5),
+    inset 0 -22px 36px rgba(0, 0, 0, 0.65),
+    inset 0 0 40px color-mix(in srgb, var(--spoke-neon) 40%, transparent),
+    0 0 42px color-mix(in srgb, var(--spoke-neon) 65%, transparent);
+  filter: brightness(1.08);
 }
 
 .orb-spoke:hover::before,
 .orb-spoke:focus::before {
-  opacity: 1;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 25px color-mix(in srgb, var(--spoke-neon) 85%, transparent));
+}
+
+.orb-spoke:hover::after,
+.orb-spoke:focus::after {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--spoke-neon) 90%, transparent),
+    0 0 28px color-mix(in srgb, var(--spoke-neon) 85%, transparent),
+    0 0 58px var(--spoke-neon);
 }
 
 .orb-spoke__label {
@@ -462,6 +511,86 @@ section:not(.home--orb-focused):hover::after {
   font-size: 0.66rem;
   color: rgba(229, 244, 255, 0.55);
   text-align: center;
+}
+
+.orb-spoke:nth-child(1) {
+  --orb-spoke-clip: polygon(8% 12%, 24% 4%, 60% 2%, 86% 6%, 100% 34%, 90% 90%, 52% 100%, 12% 92%);
+  --spoke-neon: #74f5ff;
+  --spoke-fill-angle: 128deg;
+  --spoke-fill-start: rgba(40, 66, 112, 0.94);
+  --spoke-fill-end: rgba(8, 16, 32, 0.85);
+}
+
+.orb-spoke:nth-child(2) {
+  --orb-spoke-clip: polygon(10% 10%, 34% 2%, 70% 2%, 92% 8%, 100% 30%, 88% 94%, 46% 100%, 8% 78%);
+  --spoke-neon: #ff81de;
+  --spoke-fill-angle: 154deg;
+  --spoke-fill-start: rgba(70, 28, 76, 0.94);
+  --spoke-fill-end: rgba(18, 6, 26, 0.88);
+}
+
+.orb-spoke:nth-child(3) {
+  --orb-spoke-clip: polygon(6% 14%, 26% 4%, 62% 2%, 88% 4%, 100% 28%, 94% 82%, 58% 100%, 14% 96%);
+  --spoke-neon: #8eff73;
+  --spoke-fill-angle: 118deg;
+  --spoke-fill-start: rgba(30, 72, 38, 0.92);
+  --spoke-fill-end: rgba(6, 20, 10, 0.86);
+}
+
+.orb-spoke:nth-child(4) {
+  --orb-spoke-clip: polygon(12% 10%, 32% 2%, 68% 2%, 92% 10%, 98% 42%, 84% 94%, 44% 100%, 8% 70%);
+  --spoke-neon: #ffce63;
+  --spoke-fill-angle: 162deg;
+  --spoke-fill-start: rgba(90, 52, 14, 0.94);
+  --spoke-fill-end: rgba(24, 10, 0, 0.86);
+}
+
+.orb-spoke:nth-child(5) {
+  --orb-spoke-clip: polygon(6% 8%, 28% 2%, 66% 2%, 90% 10%, 100% 40%, 88% 88%, 50% 100%, 10% 88%);
+  --spoke-neon: #ac8aff;
+  --spoke-fill-angle: 138deg;
+  --spoke-fill-start: rgba(50, 34, 84, 0.94);
+  --spoke-fill-end: rgba(16, 10, 36, 0.88);
+}
+
+.orb-spoke:nth-child(6) {
+  --orb-spoke-clip: polygon(8% 10%, 30% 2%, 64% 2%, 90% 8%, 100% 36%, 90% 90%, 40% 100%, 6% 74%);
+  --spoke-neon: #61ffe0;
+  --spoke-fill-angle: 146deg;
+  --spoke-fill-start: rgba(18, 70, 62, 0.92);
+  --spoke-fill-end: rgba(4, 22, 18, 0.86);
+}
+
+.orb-spoke:nth-child(7) {
+  --orb-spoke-clip: polygon(4% 12%, 22% 4%, 60% 2%, 88% 6%, 100% 32%, 92% 90%, 48% 100%, 6% 78%);
+  --spoke-neon: #ff7f6c;
+  --spoke-fill-angle: 132deg;
+  --spoke-fill-start: rgba(76, 28, 20, 0.94);
+  --spoke-fill-end: rgba(24, 6, 4, 0.9);
+}
+
+.orb-spoke:nth-child(8) {
+  --orb-spoke-clip: polygon(10% 12%, 38% 2%, 74% 2%, 92% 8%, 100% 30%, 84% 92%, 40% 100%, 6% 76%);
+  --spoke-neon: #7de1ff;
+  --spoke-fill-angle: 122deg;
+  --spoke-fill-start: rgba(28, 58, 94, 0.94);
+  --spoke-fill-end: rgba(8, 16, 32, 0.88);
+}
+
+.orb-spoke:nth-child(9) {
+  --orb-spoke-clip: polygon(8% 8%, 28% 2%, 64% 2%, 90% 8%, 100% 36%, 90% 94%, 46% 100%, 6% 80%);
+  --spoke-neon: #ffe866;
+  --spoke-fill-angle: 170deg;
+  --spoke-fill-start: rgba(94, 62, 12, 0.93);
+  --spoke-fill-end: rgba(28, 16, 0, 0.88);
+}
+
+.orb-spoke:nth-child(10) {
+  --orb-spoke-clip: polygon(6% 10%, 26% 2%, 60% 2%, 88% 8%, 100% 32%, 94% 84%, 56% 100%, 10% 92%);
+  --spoke-neon: #a18bff;
+  --spoke-fill-angle: 138deg;
+  --spoke-fill-start: rgba(44, 32, 84, 0.94);
+  --spoke-fill-end: rgba(14, 10, 34, 0.88);
 }
 
 @media (max-width: 640px) {
