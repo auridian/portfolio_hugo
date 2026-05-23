@@ -28,7 +28,7 @@ export function LinksPage() {
       <ul className="links-list">
         <li>
           <a href="https://www.joincrowdhealth.com/?referral_code=MILO" target="_blank" rel="noopener noreferrer">
-            Crowdh Health - crowdsharing insurance alternative for those who are annoyed with insurance (aka everyone)
+            Crowd Health - crowdsharing insurance alternative for those who are annoyed with insurance (aka everyone)
           </a>
         </li>
         <li>
