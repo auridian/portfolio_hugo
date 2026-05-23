@@ -1,6 +1,4 @@
-import type { CSSProperties } from 'react';
-
-type SpokeNode = {
+type HomeLink = {
   key: string;
   label: string;
   description: string;
@@ -8,59 +6,55 @@ type SpokeNode = {
   external?: boolean;
 };
 
-const spokeNodes: SpokeNode[] = [
-  { key: 'X', label: 'X', description: 'X (Twitter)', href: 'https://twitter.com/defusionista', external: true },
-  //{ key: 'fun', label: 'fun', description: 'fun and games', href: '/fun' },
-  {key: 'blog', label: 'blog', description: 'old site posts', href: '/posts' },
-  { key: 'substack', label: 'substack', description: 'thoughts on tech/life', href: 'https://defusion.substack.com/', external: true },
-  { key: 'links', label: 'links', description: '', href: '/links' },
-  { key: 'about', label: 'About', description: 'about', href: '/about' },
-  { key: 'services', label: 'Services', description: 'pay me?', href: '/services' },
-  { key: 'contact', label: 'Contact', description: 'say hi', href: '/contact' },
-  { key: 'auridium', label: 'Auridium', description: 'my commercial entity', href: 'https://auridium.tech/', external: true },
-  { key: 'resume', label: 'Resume', description: 'see resume', href: '/resume' },
-  { key: 'github', label: 'GitHub', description: 'github', href: 'https://github.com/auridian', external: true }
+const primaryLinks: HomeLink[] = [
+  { key: 'about', label: 'About', description: '', href: '/about' },
+  { key: 'services', label: 'Services', description: 'stuff you can pay me to do (non-exhaustive)', href: '/services' },
+  { key: 'contact', label: 'Contact', description: '', href: '/contact' },
+  { key: 'resume', label: 'Resume', description: 'pdf (last updated 02024)', href: '/resume' }
 ];
 
-export function HomePage() {
-  const spokeCount = spokeNodes.length;
+const secondaryLinks: HomeLink[] = [
+  { key: 'blog', label: 'Blog', description: 'old site posts and project notes', href: '/posts' },
+  { key: 'links', label: 'Links', description: 'fun things and referrals', href: '/links' },
+  { key: 'substack', label: 'Substack', description: 'nag me to write more please', href: 'https://defusion.substack.com/', external: true },
+  { key: 'x', label: 'X', description: 'formerly known as Twitter', href: 'https://twitter.com/defusionista', external: true },
+  { key: 'github', label: 'GitHub', description: 'mostly older public stuff', href: 'https://github.com/auridian', external: true },
+  { key: 'auridium', label: 'Auridium', description: 'my corporate entity', href: 'https://auridium.tech/', external: true }
+];
 
+function linkProps(link: HomeLink) {
+  return link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+}
+
+export function HomePage() {
   return (
-    <section className="home home--orb-focused">
-      <div className="home-orb">
-        <div className="home-orb__halo" aria-hidden />
-        <div className="home-orb__core">
-          <p className="home-kicker"></p>
-          <h1 className="home-orb__title">Milo J. Hooper</h1>
-          <p className="home-orb__intro">
+    <section className="home home--signal">
+      <div className="home-stage">
+        <div className="home-identity" aria-label="Milo J. Hooper">
+          <p className="home-kicker">automating myself and lifemaxxing</p>
+          <h1>Milo J. Hooper</h1>
+          <p className="home-deck">
+            let's do something cool
           </p>
         </div>
 
-        <div className="home-orb__spokes">
-          {spokeNodes.map((node, index) => {
-            const angle = spokeCount ? (360 / spokeCount) * index : 0;
-            const inlineStyle = {
-              '--orb-angle': `${angle}deg`
-            } as CSSProperties;
+        <nav className="home-actions" aria-label="Primary">
+          {primaryLinks.map((link) => (
+            <a key={link.key} className="home-action" href={link.href} {...linkProps(link)}>
+              <span>{link.label}</span>
+              <small>{link.description}</small>
+            </a>
+          ))}
+        </nav>
 
-            const linkProps = node.external
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : undefined;
-
-            return (
-              <a
-                key={node.key}
-                className="orb-spoke"
-                href={node.href}
-                style={inlineStyle}
-                {...linkProps}
-              >
-                <span className="orb-spoke__label">{node.label}</span>
-                <span className="orb-spoke__meta">{node.description}</span>
-              </a>
-            );
-          })}
-        </div>
+        <nav className="home-link-grid" aria-label="Secondary">
+          {secondaryLinks.map((link) => (
+            <a key={link.key} className="home-link-card" href={link.href} {...linkProps(link)}>
+              <span className="home-link-card__label">{link.label}</span>
+              <span className="home-link-card__description">{link.description}</span>
+            </a>
+          ))}
+        </nav>
       </div>
     </section>
   );
