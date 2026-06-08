@@ -1113,6 +1113,14 @@ code {
   background: rgba(5, 7, 14, 0.85);
 }
 
+.blog-post-pdf-actions {
+  margin-top: clamp(0.2rem, 1vw, 0.6rem);
+}
+
+.blog-post-pdf-viewer iframe {
+  height: clamp(560px, 78vh, 980px);
+}
+
 .about-page {
   display: grid;
   grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);

@@ -95,10 +95,20 @@ function extractSummary(markdown) {
   return firstBlockText.length > 260 ? `${firstBlockText.slice(0, 257)}…` : firstBlockText;
 }
 
-function buildHtmlDocument({ title, description, body, legacyPermalink, canonicalPath }) {
+function buildHtmlDocument({ title, description, body, legacyPermalink, canonicalPath, pdfUrl }) {
   const metaDescription = description || 'Post by Milo J. Hooper';
   const legacyNotice = legacyPermalink
     ? `<aside class="legacy-banner">Originally published at <a href="${legacyPermalink}">${legacyPermalink}</a></aside>`
+    : '';
+  const pdfViewer = pdfUrl
+    ? `<div class="post-pdf-actions">
+        <a href="${pdfUrl}" target="_blank" rel="noopener noreferrer">Open PDF</a>
+        <a href="${pdfUrl}" download rel="noopener noreferrer">Download PDF</a>
+      </div>
+      <div class="post-pdf-viewer">
+        <iframe src="${pdfUrl}#view=FitH" title="${title} PDF preview" loading="lazy"></iframe>
+      </div>
+      <p class="post-pdf-fallback">Embedded preview not displaying? <a href="${pdfUrl}">Open the PDF directly</a>.</p>`
     : '';
 
   return `<!doctype html>
@@ -115,6 +125,7 @@ function buildHtmlDocument({ title, description, body, legacyPermalink, canonica
     <main class="post-wrapper">
       ${legacyNotice}
       <article class="post">${body}</article>
+      ${pdfViewer}
     </main>
   </body>
 </html>`;
@@ -211,6 +222,7 @@ async function main() {
     const dateISO = data.date ? new Date(data.date).toISOString() : null;
     const categories = normalizeCategories(data.categories);
     const legacyPermalink = data.permalink ? String(data.permalink) : null;
+    const pdfUrl = data.pdfUrl ? String(data.pdfUrl) : null;
     const canonicalPath = `/blog/${slug}/`;
     const legacyNoticeHtml = legacyPermalink
       ? `Originally published at <a href="${legacyPermalink}">${legacyPermalink}</a>`
@@ -221,7 +233,8 @@ async function main() {
       description: summary,
       body: htmlBody,
       legacyPermalink,
-      canonicalPath
+      canonicalPath,
+      pdfUrl
     });
 
     await writePostHtml(slug, htmlDocument);
@@ -233,6 +246,7 @@ async function main() {
       summary,
       categories,
       legacyPermalink,
+      pdfUrl,
       htmlPath: canonicalPath,
       bodyHtml: htmlBody,
       legacyNoticeHtml

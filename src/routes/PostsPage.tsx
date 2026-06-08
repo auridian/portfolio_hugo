@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { getPosts } from '../lib/posts';
 
 function formatPostDate(dateString: string) {
@@ -31,15 +32,15 @@ export function PostsPage() {
             <article key={post.slug} className="post-teaser">
               <header>
                 <h3>
-                  <a href={post.htmlPath}>{post.title}</a>
+                  <Link to={post.htmlPath}>{post.title}</Link>
                 </h3>
                 {post.date && <time dateTime={post.date}>{formatPostDate(post.date)}</time>}
               </header>
               <p>{post.summary}</p>
               <footer>
-                <a className="btn tertiary" href={post.htmlPath}>
+                <Link className="btn tertiary" to={post.htmlPath}>
                   Read post
-                </a>
+                </Link>
                 {/*post.legacyPermalink && (
                   <a className="legacy-link" href={post.legacyPermalink}>
                     Original permalink

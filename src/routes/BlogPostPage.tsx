@@ -103,6 +103,25 @@ export function BlogPostPage() {
       ) : (
         <section className="blog-post-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       )}
+
+      {entry.pdfUrl && (
+        <>
+          <div className="resume-actions blog-post-pdf-actions">
+            <a className="btn primary" href={entry.pdfUrl} target="_blank" rel="noopener noreferrer">
+              Open PDF
+            </a>
+            <a className="btn secondary" href={entry.pdfUrl} download rel="noopener noreferrer">
+              Download PDF
+            </a>
+          </div>
+          <div className="resume-viewer blog-post-pdf-viewer">
+            <iframe src={`${entry.pdfUrl}#view=FitH`} title={`${entry.title} PDF preview`} loading="lazy" />
+          </div>
+          <p className="text-subtle">
+            Embedded preview not displaying? <a href={entry.pdfUrl}>Open the PDF directly</a>.
+          </p>
+        </>
+      )}
     </article>
   );
 }

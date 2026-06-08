@@ -7,6 +7,7 @@ export type PostMeta = {
   summary: string;
   categories: string[];
   legacyPermalink: string | null;
+  pdfUrl?: string | null;
   htmlPath: string;
   bodyHtml?: string;
   legacyNoticeHtml?: string | null;
@@ -21,6 +22,7 @@ function coercePost(post: PostMeta): PostMeta {
     summary: post.summary ?? '',
     categories: Array.isArray(post.categories) ? post.categories : [],
     legacyPermalink: post.legacyPermalink ?? null,
+    pdfUrl: post.pdfUrl ?? null,
     htmlPath: post.htmlPath,
     bodyHtml: post.bodyHtml ?? undefined,
     legacyNoticeHtml: post.legacyNoticeHtml ?? (post.legacyPermalink ? `Originally published at ${post.legacyPermalink}` : null)
