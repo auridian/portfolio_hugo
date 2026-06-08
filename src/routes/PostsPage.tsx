@@ -20,9 +20,9 @@ export function PostsPage() {
   return (
     <section className="posts">
       <header className="section-header">
-        <h2>Posts</h2>
+        <h2>Writing</h2>
         <p>
-          Legacy articles are being remixed into new canonical URLs under <code>/blog/</code>. This area is under construction, expect things to break.
+          Essays, project writeups, and older site posts collected under stable <code>/blog/</code> URLs.
         </p>
       </header>
       {hasPosts ? (

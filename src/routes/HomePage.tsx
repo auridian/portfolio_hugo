@@ -14,7 +14,7 @@ const primaryLinks: HomeLink[] = [
 ];
 
 const secondaryLinks: HomeLink[] = [
-  { key: 'blog', label: 'Blog', description: 'old site posts and project notes', href: '/posts' },
+  { key: 'writing', label: 'Writing', description: 'essays, old site posts, and project notes', href: '/posts' },
   { key: 'links', label: 'Links', description: 'fun things and referrals', href: '/links' },
   { key: 'substack', label: 'Substack', description: 'nag me to write more please', href: 'https://defusion.substack.com/', external: true },
   { key: 'x', label: 'X', description: 'formerly known as Twitter', href: 'https://twitter.com/defusionista', external: true },
