@@ -7,9 +7,7 @@ import { LinksPage } from './routes/LinksPage';
 import { FunPage } from './routes/FunPage';
 import { BlogPostPage, blogPostLoader } from './routes/BlogPostPage';
 import { NotFoundPage } from './routes/NotFoundPage';
-import { NowPage } from './routes/NowPage';
 import { ProjectsPage } from './routes/ProjectsPage';
-import { StatsPage } from './routes/StatsPage';
 import { AboutPage } from './routes/AboutPage';
 import { ContactPage } from './routes/ContactPage';
 import { MetaPage } from './routes/MetaPage';
@@ -30,20 +28,12 @@ export const router = createBrowserRouter([
         element: <PostsPage />
       },
       {
-        path: 'now',
-        element: <NowPage />
-      },
-      {
         path: 'projects',
         element: <ProjectsPage />
       },
       {
         path: 'fun',
         element: <FunPage />
-      },
-      {
-        path: 'stats',
-        element: <StatsPage />
       },
       {
         path: 'services',

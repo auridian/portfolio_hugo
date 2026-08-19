@@ -52,10 +52,7 @@ export function PostsPage() {
         </div>
       ) : (
         <div className="posts-empty">
-          <p>Nothing is published here yet, but the archive migration is in progress.</p>
-          <p>
-            Need the old content now? Grab it from the <a href="/archive/oldsite/index.html">legacy snapshot</a>.
-          </p>
+          <p>Nothing is published here yet.</p>
         </div>
       )}
     </section>

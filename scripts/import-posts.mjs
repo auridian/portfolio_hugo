@@ -2,20 +2,19 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import toml from '@iarna/toml';
 import { marked } from 'marked';
 import { JSDOM } from 'jsdom';
 
 const ROOT = process.cwd();
-const SOURCE_DIR = path.resolve(ROOT, 'content', 'posts');
-const LEGACY_ASSETS_DIR = path.resolve(ROOT, 'static');
-const OUTPUT_ASSETS_DIR = path.resolve(ROOT, 'public');
+const SITE_URL = (process.env.SITE_URL ?? 'https://milohooper.com').replace(/\/$/, '');
+const SOURCE_DIR = path.resolve(ROOT, 'posts');
 const OUTPUT_HTML_DIR = path.resolve(ROOT, 'public', 'blog');
+const POST_STYLES_SOURCE = path.resolve(ROOT, 'scripts', 'post.css');
+const POST_STYLES_OUTPUT = path.resolve(OUTPUT_HTML_DIR, 'post.css');
 const DATA_DIR = path.resolve(ROOT, 'src', 'data');
 const DATA_FILE = path.resolve(DATA_DIR, 'posts.json');
-const FORCE_CLEAN = process.argv.includes('--force');
 
-const SUPPORTED_EXTENSIONS = new Set(['.md', '.markdown', '.markdown.md']);
+const SUPPORTED_EXTENSIONS = new Set(['.md']);
 
 const dom = new JSDOM('');
 const document = dom.window.document;
@@ -25,7 +24,7 @@ async function ensureDirectory(dirPath) {
 }
 
 function baseNameWithoutExt(filename) {
-  return filename.replace(/\.(markdown\.md|md|markdown)$/i, '');
+  return filename.replace(/\.md$/i, '');
 }
 
 function stripDatePrefix(value) {
@@ -42,35 +41,6 @@ function normalizeCategories(input) {
   if (!input) return [];
   if (Array.isArray(input)) return input.map((item) => String(item));
   return [String(input)];
-}
-
-function rewriteAssetPaths(markdown) {
-  return markdown.replace(/(!?\[[^\]]*\]\()\s*(\/[^)]+)(\))/g, (match, prefix, url, suffix) => {
-    if (!url.startsWith('/')) return match;
-    return `${prefix}${url}${suffix}`;
-  });
-}
-
-function expandShortcodes(markdown) {
-  let output = markdown;
-
-  output = output.replace(/{{<\s*video\s*"([^"]+)"\s*>}}/g, (_full, id) => {
-    const trimmed = String(id).trim();
-    if (!trimmed) return '';
-    return `\n<div class="embed-frame"><iframe src="https://www.youtube.com/embed/${trimmed}" title="Embedded video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n`;
-  });
-
-  output = output.replace(/{{<\s*img\s*src="([^"]+)"\s*alt="([^"]*)"\s*>}}/g, (_full, src, alt) => {
-    const resolvedSrc = src.startsWith('/') ? src : `/${src}`;
-    const altText = alt ? alt.trim() : '';
-    return `![${altText}](${resolvedSrc})`;
-  });
-
-  return output;
-}
-
-function normalizeContent(markdown) {
-  return rewriteAssetPaths(expandShortcodes(markdown));
 }
 
 function decodeHtmlEntities(str) {
@@ -97,9 +67,11 @@ function extractSummary(markdown) {
 
 function buildHtmlDocument({ title, description, body, legacyPermalink, canonicalPath, pdfUrl }) {
   const metaDescription = description || 'Post by Milo J. Hooper';
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
   const legacyNotice = legacyPermalink
     ? `<aside class="legacy-banner">Originally published at <a href="${legacyPermalink}">${legacyPermalink}</a></aside>`
     : '';
+  const legacyNoticeLine = legacyNotice ? `      ${legacyNotice}\n` : '';
   const pdfViewer = pdfUrl
     ? `<div class="post-pdf-actions">
         <a href="${pdfUrl}" target="_blank" rel="noopener noreferrer">Open PDF</a>
@@ -110,6 +82,7 @@ function buildHtmlDocument({ title, description, body, legacyPermalink, canonica
       </div>
       <p class="post-pdf-fallback">Embedded preview not displaying? <a href="${pdfUrl}">Open the PDF directly</a>.</p>`
     : '';
+  const pdfViewerLine = pdfViewer ? `      ${pdfViewer}\n` : '';
 
   return `<!doctype html>
 <html lang="en">
@@ -118,15 +91,18 @@ function buildHtmlDocument({ title, description, body, legacyPermalink, canonica
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${title}</title>
     <meta name="description" content="${decodeHtmlEntities(metaDescription).replace(/"/g, '&quot;')}" />
-    <link rel="canonical" href="${canonicalPath}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${decodeHtmlEntities(metaDescription).replace(/"/g, '&quot;')}" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="/blog/post.css" />
   </head>
   <body>
     <main class="post-wrapper">
-      ${legacyNotice}
-      <article class="post">${body}</article>
-      ${pdfViewer}
-    </main>
+${legacyNoticeLine}      <article class="post">${body}</article>
+${pdfViewerLine}    </main>
   </body>
 </html>`;
 }
@@ -142,40 +118,9 @@ async function collectSourceFiles() {
     .map((entry) => entry.name);
 }
 
-function parseFrontMatter(raw) {
-  const trimmed = raw.trimStart();
-  if (trimmed.startsWith('+++')) {
-    return matter(raw, {
-      language: 'toml',
-      delimiters: '+++',
-      engines: {
-        toml: toml.parse.bind(toml)
-      }
-    });
-  }
-
-  return matter(raw);
-}
-
 async function readMarkdown(filePath) {
   const raw = await fs.readFile(filePath, 'utf-8');
-  return parseFrontMatter(raw);
-}
-
-async function copyLegacyAssets() {
-  try {
-    await fs.access(LEGACY_ASSETS_DIR);
-  } catch (error) {
-    if (error && error.code === 'ENOENT') {
-      return;
-    }
-    throw error;
-  }
-
-  await fs.cp(LEGACY_ASSETS_DIR, OUTPUT_ASSETS_DIR, {
-    recursive: true,
-    force: true
-  });
+  return matter(raw);
 }
 
 async function writePostHtml(slug, htmlDocument) {
@@ -191,16 +136,13 @@ async function writeMetadata(posts) {
 }
 
 async function main() {
-  if (FORCE_CLEAN) {
-    await fs.rm(OUTPUT_HTML_DIR, { recursive: true, force: true });
-    await fs.rm(DATA_FILE, { force: true });
-  }
+  await fs.rm(OUTPUT_HTML_DIR, { recursive: true, force: true });
   await ensureDirectory(OUTPUT_HTML_DIR);
-  await copyLegacyAssets();
+  await fs.copyFile(POST_STYLES_SOURCE, POST_STYLES_OUTPUT);
 
   const files = await collectSourceFiles();
   if (files.length === 0) {
-    console.warn('No markdown posts found in content/posts.');
+    console.warn('No markdown posts found in posts/.');
     await writeMetadata([]);
     return;
   }
@@ -210,7 +152,7 @@ async function main() {
   for (const filename of files) {
     const filePath = path.resolve(SOURCE_DIR, filename);
     const { data, content } = await readMarkdown(filePath);
-    const normalizedMarkdown = normalizeContent(content);
+    const normalizedMarkdown = content;
 
     const rawSlug = data.slug ? String(data.slug) : baseNameWithoutExt(filename);
     const canonicalSlug = stripDatePrefix(rawSlug.toLowerCase());
