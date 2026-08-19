@@ -14,6 +14,7 @@ const primaryLinks: HomeLink[] = [
 ];
 
 const secondaryLinks: HomeLink[] = [
+  { key: 'policy', label: 'Policy Proposals', description: 'new hampshire bill ideas and working proposals', href: '/policy-proposals' },
   { key: 'writing', label: 'Writing', description: 'essays, old site posts, and project notes', href: '/posts' },
   { key: 'links', label: 'Links', description: 'fun things and referrals', href: '/links' },
   { key: 'substack', label: 'Substack', description: 'nag me to write more please', href: 'https://defusion.substack.com/', external: true },

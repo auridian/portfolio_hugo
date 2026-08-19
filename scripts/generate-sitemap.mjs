@@ -13,6 +13,7 @@ const POSTS_DATA_PATH = path.resolve(ROOT, 'src', 'data', 'posts.json');
 const staticRoutes = [
   '/',
   '/posts/',
+  '/policy-proposals/',
   '/services/',
   '/about/',
   '/contact/',

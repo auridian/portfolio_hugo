@@ -13,6 +13,7 @@ import { ContactPage } from './routes/ContactPage';
 import { MetaPage } from './routes/MetaPage';
 import { ServicesPage } from './routes/ServicesPage';
 import { DevNullPage } from './routes/DevNullPage';
+import { PolicyProposalsPage } from './routes/PolicyProposalsPage';
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: 'services',
         element: <ServicesPage />
+      },
+      {
+        path: 'policy-proposals',
+        element: <PolicyProposalsPage />
       },
       {
         path: 'about',
